@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+
+
+
+
+
+</head>
+
+<body>
+  <div class="container mt-5">
+    <form>
+      <!-- Linha 1 DADOS PESSOAIS-->
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo">
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="celular">Celular/WhatsApp:</label>
+            <input type="tel" class="form-control" id="celular" placeholder="Digite seu celular ou WhatsApp">
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Digite seu email">
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="cpf">CPF:</label>
+            <input type="text" class="form-control" id="cpf" placeholder="Digite seu CPF">
+          </div>
+        </div>
+      </div>
+
+      <!-- Linha ENDEREÇO E LINKEDIN -->
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="bairro">Bairro:</label>
+            <input type="text" class="form-control" id="bairro" placeholder="Digite seu bairro">
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="cidade">Cidade:</label>
+            <input type="text" class="form-control" id="cidade" placeholder="Digite sua cidade">
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="uf">UF:</label>
+            <select class="form-control" id="uf">
+              <option selected>Escolha...</option>
+              <option>AC</option>
+              <option>AC</option>
+              <option>AL</option>
+              <option>AP</option>
+              <option>AM</option>
+              <option>BA</option>
+              <option>CE</option>
+              <option>DF</option>
+              <option>ES</option>
+              <option>GO</option>
+              <option>MA</option>
+              <option>MT</option>
+              <option>MS</option>
+              <option>MG</option>
+              <option>PA</option>
+              <option>PB</option>
+              <option>PR</option>
+              <option>PE</option>
+              <option>PI</option>
+              <option>RJ</option>
+              <option>RN</option>
+              <option>RS</option>
+              <option>RO</option>
+              <option>RR</option>
+              <option>SC</option>
+              <option>SP</option>
+              <option>SE</option>
+              <option>TO</option>
+              <!-- Adicione outras opções de estado aqui -->
+            </select>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="linkedin">LinkedIn:</label>
+            <input type="text" class="form-control" id="linkedin" placeholder="Digite seu LinkedIn">
+          </div>
+        </div>
+      </div>
+
+      <!-- FORMAÇÃO ACADEMICA-->
+      <div class="row">
+        <div class="col-sm-12">
+          <h4>Formação Acadêmica:</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="curso">Curso:</label>
+            <input type="text" class="form-control" id="curso1" placeholder="Digite o curso">
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="instituicao">Instituição:</label>
+            <input type="text" class="form-control" id="instituicao" placeholder="Digite a instituição">
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="data">Data:</label>
+            <input type="text" class="form-control" id="dataFormAcd" placeholder="Digite a data">
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="adicionar">&nbsp;</label>
+            <button type="button" class="btn btn-primary btn-block">Adicionar +</button>
+          </div>
+        </div>
+      </div>
+      <!--SISTEMAS E INFORMATICA-->
+      <div class="row">
+        <div class="col-sm-12">
+          <h4>Sistemas e Informática:</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <label for="titulo_sistemas">Título:</label>
+            <input type="text" class="form-control" id="titulo_sistemas" placeholder="Digite o título">
+          </div>
+        </div>
+      </div>
+      <!--CARGOS DE INTERESSE OBJETIVO-->
+      <div class="row">
+        <div class="col-sm-12">
+          <h4>Cargos de Interesse/Objetivo:</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <label for="cargos_interesse">Cargos de Interesse/Objetivo:</label>
+            <input type="text" class="form-control" id="cargos_interesse"
+              placeholder="Digite os cargos de interesse ou objetivo">
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- TRAJETORIA PROFISSIONAL -->
+      <div class="row">
+        <div class="col-sm-12">
+          <h4>Trajetória Profissional:</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="nome_empresa">Nome da Empresa:</label>
+            <input type="text" class="form-control" id="nome_empresa" placeholder="Digite o nome da empresa">
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="cargo">Cargo:</label>
+            <input type="text" class="form-control" id="cargo" placeholder="Digite o cargo">
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="data_entrada">Data de Entrada:</label>
+            <input type="text" class="form-control" id="data_entrada" placeholder="Digite a data de entrada">
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="data_saida">Data de Saída:</label>
+            <input type="text" class="form-control" id="data_saida" placeholder="Digite a data de saída">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <label for="atividades_realizadas">Atividades Realizadas:</label>
+            <textarea class="form-control" id="atividades_realizadas" rows="3"
+              placeholder="Descreva as atividades realizadas"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Linha 5 -->
+      <div class="row">
+        <div class="col-sm-12">
+          <h4>Cursos Livres:</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="curso_realizado">Curso:</label>
+            <input type="text" class="form-control" id="curso_realizado" placeholder="Digite o curso">
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="instituicao_curso">Instituição:</label>
+            <input type="text" class="form-control" id="instituicao_curso" placeholder="Digite a instituição">
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="data_curso">Data:</label>
+            <input type="text" class="form-control" id="data_curso" placeholder="Digite a data">
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="adicionar_curso">&nbsp;</label>
+            <button type="button" class="btn btn-primary btn-block">Adicionar +</button>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- IDIOMA -->
+      <div class="row">
+        <div class="col-sm-12">
+          <h4>Idiomas:</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-9">
+          <div class="form-group">
+            <label for="idioma">Idioma:</label>
+            <input type="text" class="form-control" id="idioma" placeholder="Digite o idioma">
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="adicionar_idioma">&nbsp;</label>
+            <button type="button" class="btn btn-primary btn-block">Adicionar +</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Linha 7 -->
+      <div class="row">
+        <div class="col-sm-12">
+          <button id="btnCallAPI" type="button" class="btn btn-primary btn-block">Enviar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!--Chamada para API  -->
+  <script>
+    function enviarParaAPI() {
+      console.log("Capturando dados do formulário...");
+
+      // Captura dos valores dos campos do formulário
+      let nome = document.getElementById("nome").value;
+      let celular = document.getElementById("celular").value;
+      let email = document.getElementById("email").value;
+      let cpf = document.getElementById("cpf").value;
+      let curso1 = document.getElementById("curso1").value;
+      /*let bairro = document.getElementById("bairro").value;
+      let cidade = document.getElementById("cidade").value;
+      let uf = document.getElementById("uf").value;
+      let linkedin = document.getElementById("linkedin").value; // corrigido aqui
+     
+      let instituicao = document.getElementById("instituicao").value;
+      let dataFormAcd = document.getElementById("dataFormAcd").value;
+      //let tituloSistemas = document.getElementById("tituloSistemas").value;
+      let cargosInteresse = document.getElementById("cargosInteresse").value;
+      let nomeEmpresa = document.getElementById("nomeEmpresa").value;
+      let cargo = document.getElementById("cargo").value;
+      let dataEntrada = document.getElementById("data_Entrada").value;
+      let dataSaida = document.getElementById("data_Saida").value;
+      let atividadesRealizadas = document.getElementById("atividadesRealizadas").value;
+      let cursoRealizado = document.getElementById("cursoRealizado").value;
+      let instituicaoCurso = document.getElementById("instituicaoCursoId").value;
+      let dataCurso = document.getElementById("dataCursoId").value;
+      let idioma = document.getElementById("idioma").value;*/
+
+      // Exibição dos valores dos campos no console
+      console.log("Valores dos campos do formulário:");
+      console.log("Nome:", nome);
+      console.log("Celular:", celular);
+      console.log("Email:", email);
+      console.log("CPF:", cpf);
+      console.log("Curso1:", curso1);
+      /*console.log("Bairro:", bairro);
+      console.log("Cidade:", cidade);
+      console.log("UF:", uf);
+      console.log("LinkedIn:", linkedin);
+      
+      console.log("Instituição:", instituicao);
+      console.log("Data Formação Acadêmica:", dataFormAcd);
+      console.log("Título Sistemas:", tituloSistemas);
+      console.log("Cargos Interesse:", cargosInteresse);
+      console.log("Nome Empresa:", nomeEmpresa);
+      console.log("Cargo:", cargo);
+      console.log("Data Entrada:", dataEntrada);
+      console.log("Data Saída:", dataSaida);
+      console.log("Atividades Realizadas:", atividadesRealizadas);
+      console.log("Curso Realizado:", cursoRealizado);
+      console.log("Instituição Curso:", instituicaoCurso);
+      console.log("Data Curso:", dataCurso);
+      console.log("Idioma:", idioma);*/
+
+
+      const myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+      myHeaders.append("Authorization", "Basic YXBpc2VydmljZWZvcm06N2xZK1RUUSc5N1J3");
+
+      const data = {
+        // DADOS PESSOAIS
+        "firstname": nome,
+        "phone": celular,
+        "email": email,
+        "curso1": curso1,
+        // Adicione aqui os outros campos do formulário conforme necessário
+      };
+
+      console.log("Enviando solicitação para a API...");
+      fetch("http://conteudo.triadecarreira.com.br/api/contacts/new", {
+        method: "POST",
+        headers: myHeaders,
+        body: JSON.stringify(data)
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Erro ao enviar solicitação para a API: " + response.statusText);
+          }
+          console.log("Solicitação enviada com sucesso para a API.");
+          return response.json();
+        })
+        .then(data => {
+          console.log("Resposta da API:", data);
+          // Adicione aqui o código para lidar com a resposta da API, se necessário
+          
+          // Redirecionar para a página de agradecimento após o envio bem-sucedido
+          window.location.href = "https://triadecarreira.com.br/obrigado/";
+      })
+        .catch(error => {
+          console.error("Erro ao enviar solicitação para a API:", error);
+        })
+        .finally(data=>{
+          // Redirecionar para a página de agradecimento
+window.location.href = "https://triadecarreira.com.br/obrigado/";
+
+        });
+    }
+
+    document.getElementById("btnCallAPI").addEventListener("click", enviarParaAPI);
+
+  </script>
+
+
+
+</body>
+
+
+</html>
