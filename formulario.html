@@ -10,6 +10,8 @@
 
 
 
+
+
 </head>
 
 <body>
@@ -97,7 +99,7 @@
         <div class="col-sm-3">
           <div class="form-group">
             <label for="linkedin">LinkedIn:</label>
-            <input type="text" class="form-control" id="linkedin1" placeholder="Digite seu LinkedIn">
+            <input type="text" class="form-control" id="linkedin" placeholder="Digite seu LinkedIn">
           </div>
         </div>
       </div>
@@ -118,15 +120,15 @@
         <div class="col-sm-3">
           <div class="form-group">
             <label for="instituicao">Instituição:</label>
-            <input type="text" class="form-control" id="instituicao1" placeholder="Digite a instituição">
+            <input type="text" class="form-control" id="instituicao" placeholder="Digite a instituição">
           </div>
         </div>
         <div class="col-sm-3">
           <div class="form-group">
-              <label for="data">Data:</label>
-              <input type="text" class="form-control" id="data1" placeholder="Digite a data">
+            <label for="data">Data:</label>
+            <input type="text" class="form-control" id="dataFormAcd" placeholder="Digite a data">
           </div>
-      </div>
+        </div>
         <div class="col-sm-3">
           <div class="form-group">
             <label for="adicionar">&nbsp;</label>
@@ -288,19 +290,10 @@
       let bairro = document.getElementById("bairro").value;
       let cidade = document.getElementById("cidade").value;
       let uf = document.getElementById("uf").value;
-      let linkedin1 = document.getElementById("linkedin1").value;
+      let linkedin = document.getElementById("linkedin").value;
       let curso1 = document.getElementById("curso1").value;
-      let instituicao1 = document.getElementById("instituicao1").value;
-      let data1 = document.getElementById("data1").value;
-      let titulo_sistemas = document.getElementById("titulo_sistemas").value;
-      let cargos_interesse = document.getElementById("cargos_interesse").value;
-
-      /*let bairro = document.getElementById("bairro").value;
-      let cidade = document.getElementById("cidade").value;
-      let uf = document.getElementById("uf").value;
-      let linkedin = document.getElementById("linkedin").value; // corrigido aqui
-     
-      let instituicao = document.getElementById("instituicao").value;
+       // corrigido aqui
+      /*let instituicao = document.getElementById("instituicao").value;
       let dataFormAcd = document.getElementById("dataFormAcd").value;
       //let tituloSistemas = document.getElementById("tituloSistemas").value;
       let cargosInteresse = document.getElementById("cargosInteresse").value;
@@ -320,19 +313,15 @@
       console.log("Celular:", celular);
       console.log("Email:", email);
       console.log("CPF:", cpf);
-      console.log("BAIRRO:", bairro);
+      console.log("Bairro:", bairro);
       console.log("Cidade:", cidade);
       console.log("UF:", uf);
-      console.log("linkedin1:", linkedin1);
-      //FORMULARIO FORMAÇÃO ACADEMICA
+      console.log("LinkedIn:", linkedin);
       console.log("Curso1:", curso1);
-      console.log("Instituicao1:", instituicao1);
-      console.log("Data1:", data1);
-      console.log("titulo_sistemas",titulo_sistemas);
-      console.log("cargos_interesse",cargos_interesse);
-
-
       /*
+      console.log("Instituição:", instituicao);
+      console.log("Data Formação Acadêmica:", dataFormAcd);
+      console.log("Título Sistemas:", tituloSistemas);
       console.log("Cargos Interesse:", cargosInteresse);
       console.log("Nome Empresa:", nomeEmpresa);
       console.log("Cargo:", cargo);
@@ -349,23 +338,17 @@
       myHeaders.append("Content-Type", "application/json");
       myHeaders.append("Authorization", "Basic YXBpc2VydmljZWZvcm06N2xZK1RUUSc5N1J3");
 
-      const data = {//DADOS QUE SERÃO RELACIONADOS COM A API
+      const data = {
         // DADOS PESSOAIS
         "firstname": nome,
         "phone": celular,
         "email": email,
-        "cpf": cpf,
+        "cpf":cpf,
         "bairro": bairro,
         "cidade": cidade,
         "uf": uf,
-        "linkedin1": linkedin1,
-        "curso1": curso1,
-        "instituicao1": instituicao1,
-        "data1": data1,
-        "titulo_sistemas":titulo_sistemas,
-        "cargos_interesse":cargos_interesse,
-        
-
+        "linkedin": linkedin,
+        "curso1" : curso1,
         // Adicione aqui os outros campos do formulário conforme necessário
       };
 
@@ -402,12 +385,8 @@ window.location.href = "https://triadecarreira.com.br/obrigado/";
     document.getElementById("btnCallAPI").addEventListener("click", enviarParaAPI);
 
   </script>
-  <!--Filtro da Data-->
-  <script>
-    $(document).ready(function() {
-        $('#data1').mask('00/00/0000');
-    });
-</script>
+
+
 
 </body>
 
