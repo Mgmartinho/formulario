@@ -226,13 +226,13 @@
         <div class="col-sm-3">
           <div class="form-group">
             <label for="instituicao_curso">Instituição:</label>
-            <input type="text" class="form-control" id="instituicao_curso" placeholder="Digite a instituição">
+            <input type="text" class="form-control" id="instituicao_curso1" placeholder="Digite a instituição">
           </div>
         </div>
         <div class="col-sm-3">
           <div class="form-group">
             <label for="data_curso">Data:</label>
-            <input type="text" class="form-control" id="data_curso" placeholder="Digite a data">
+            <input type="text" class="form-control" id="data_curso1" placeholder="Digite a data">
           </div>
         </div>
         <div class="col-sm-3">
@@ -292,20 +292,29 @@
       let uf = document.getElementById("uf").value;
       let linkedin = document.getElementById("linkedin").value;
       let curso1 = document.getElementById("curso1").value;
-       // corrigido aqui
-      /*let instituicao = document.getElementById("instituicao").value;
+      let instituicao1 = document.getElementById("instituicao1").value;
+      let data1 = document.getElementById("data1").value;
+      let titulo_sistemas = document.getElementById("titulo_sistemas").value;
+      let cargos_interesse = document.getElementById("cargos_interesse").value;
+
+      /*let bairro = document.getElementById("bairro").value;
+      let cidade = document.getElementById("cidade").value;
+      let uf = document.getElementById("uf").value;
+      let linkedin = document.getElementById("linkedin").value; // corrigido aqui
+     
+      let instituicao = document.getElementById("instituicao").value;
       let dataFormAcd = document.getElementById("dataFormAcd").value;
       //let tituloSistemas = document.getElementById("tituloSistemas").value;
       let cargosInteresse = document.getElementById("cargosInteresse").value;
       let nomeEmpresa = document.getElementById("nomeEmpresa").value;
       let cargo = document.getElementById("cargo").value;
-      let dataEntrada = document.getElementById("data_Entrada").value;
-      let dataSaida = document.getElementById("data_Saida").value;
-      let atividadesRealizadas = document.getElementById("atividadesRealizadas").value;
-      let cursoRealizado = document.getElementById("cursoRealizado").value;
-      let instituicaoCurso = document.getElementById("instituicaoCursoId").value;
-      let dataCurso = document.getElementById("dataCursoId").value;
-      let idioma = document.getElementById("idioma").value;*/
+      let data_Entrada = document.getElementById("data_Entrada").value;
+      let data_Saida = document.getElementById("data_Saida").value;
+      let atividades_realizadas = document.getElementById("atividades_realizadas").value;
+      let curso_realizado = document.getElementById("curso_realizado").value;
+      let instituicao_curso1 = document.getElementById("instituicao_curso1").value;
+      let data_curso1 = document.getElementById("data_curso1").value;
+      let idioma = document.getElementById("idioma").value;
 
       // Exibição dos valores dos campos no console
       console.log("Valores dos campos do formulário:");
@@ -316,22 +325,27 @@
       console.log("Bairro:", bairro);
       console.log("Cidade:", cidade);
       console.log("UF:", uf);
-      console.log("LinkedIn:", linkedin);
+      console.log("linkedin1:", linkedin1);
+      //FORMULARIO FORMAÇÃO ACADEMICA
       console.log("Curso1:", curso1);
+      console.log("Instituicao1:", instituicao1);
+      console.log("Data1:", data1);
+      console.log("titulo_sistemas",titulo_sistemas);
+      console.log("cargos_interesse",cargos_interesse);
+
+
       /*
-      console.log("Instituição:", instituicao);
-      console.log("Data Formação Acadêmica:", dataFormAcd);
-      console.log("Título Sistemas:", tituloSistemas);
       console.log("Cargos Interesse:", cargosInteresse);
       console.log("Nome Empresa:", nomeEmpresa);
       console.log("Cargo:", cargo);
-      console.log("Data Entrada:", dataEntrada);
-      console.log("Data Saída:", dataSaida);
-      console.log("Atividades Realizadas:", atividadesRealizadas);
-      console.log("Curso Realizado:", cursoRealizado);
-      console.log("Instituição Curso:", instituicaoCurso);
-      console.log("Data Curso:", dataCurso);
-      console.log("Idioma:", idioma);*/
+      console.log("data_Entrada:", data_Entrada);
+      console.log("data_Saida:", data_Saida);
+      console.log("atividades_realizadas:", atividades_realizadas);
+      console.log("curso_realizado:", curso_realizado);
+      console.log("Instituição Curso:", instituicao_curso1);
+      console.log("data_curso1:", data_curso1);
+      console.log("idioma:", idioma);
+      
 
 
       const myHeaders = new Headers();
@@ -347,8 +361,14 @@
         "bairro": bairro,
         "cidade": cidade,
         "uf": uf,
-        "linkedin": linkedin,
-        "curso1" : curso1,
+        "linkedin1": linkedin1,
+        "curso1": curso1,
+        "instituicao1": instituicao1,
+        "data1": data1,
+        "titulo_sistemas":titulo_sistemas,
+        "cargos_interesse":cargos_interesse,
+        
+
         // Adicione aqui os outros campos do formulário conforme necessário
       };
 
