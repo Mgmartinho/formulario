@@ -11,50 +11,50 @@
 
 <body>
   <div class="container mt-5">
-    <form>
+    <form class="text-uppercase">
       <!-- Linha 1 DADOS PESSOAIS-->
-      <div class="row">
-        <div class="col-sm-3">
+      <div class="row ">
+        <div class="col-md-3">
           <div class="form-group">
-            <label for="nome">Nome Completo:</label>
-            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo">
+            <label for="nome">Nome Completo: *</label>
+            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo" required>
           </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <div class="form-group">
-            <label for="celular">Celular/WhatsApp:</label>
-            <input type="tel" class="form-control" id="celular" placeholder="Digite seu celular ou WhatsApp">
+            <label for="celular">Celular/WhatsApp:*</label>
+            <input type="tel" class="form-control" id="celular" placeholder="Digite seu celular (XX)XXXXX-XXXX" required>
           </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" placeholder="Digite seu email">
+            <label for="email">Email: *</label>
+            <input type="email" class="form-control" id="email" placeholder="Digite seu email" required>
           </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <div class="form-group">
-            <label for="cpf">CPF:</label>
-            <input type="text" class="form-control" id="cpf" placeholder="Digite seu CPF">
+            <label for="cpf">CPF: *</label>
+            <input type="text" class="form-control" id="cpf" placeholder="Digite seu CPF " required>
           </div>
         </div>
       </div>
 
       <!-- Linha ENDEREÇO E LINKEDIN -->
       <div class="row">
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <div class="form-group">
             <label for="bairro">Bairro:</label>
             <input type="text" class="form-control" id="bairro" placeholder="Digite seu bairro">
           </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <div class="form-group">
             <label for="cidade">Cidade:</label>
             <input type="text" class="form-control" id="cidade" placeholder="Digite sua cidade">
           </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <div class="form-group">
             <label for="uf">UF:</label>
             <select class="form-control" id="uf">
@@ -90,7 +90,7 @@
             </select>
           </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <div class="form-group">
             <label for="linkedin1">LinkedIn:</label>
             <input type="text" class="form-control" id="linkedin1" placeholder="Digite seu LinkedIn">
@@ -100,30 +100,30 @@
 
       <!-- FORMAÇÃO ACADEMICA-->
       <div class="row">
-        <div class="col-sm-12">
+        <div class="col-md-12">
           <h4>Formação Acadêmica:</h4>
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <div class="form-group">
             <label for="curso1">Curso:</label>
             <input type="text" class="form-control" id="curso1" placeholder="Digite o curso">
           </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <div class="form-group">
             <label for="instituicao1">Instituição:</label>
             <input type="text" class="form-control" id="instituicao1" placeholder="Digite a instituição">
           </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <div class="form-group">
             <label for="data1">Data:</label>
             <input type="text" class="form-control" id="data1" placeholder="Digite a data">
           </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <div class="form-group">
             <label for="adicionar">&nbsp;</label>
             <button type="button" class="btn btn-primary btn-block">Adicionar +</button>
@@ -133,12 +133,12 @@
 
       <!--SISTEMAS E INFORMATICA-->
       <div class="row">
-        <div class="col-sm-12">
+        <div class="col-md-12">
           <h4>Sistemas e Informática:</h4>
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-12">
+        <div class="col-md-12">
           <div class="form-group">
             <label for="titulo_sistemas">Título:</label>
             <input type="text" class="form-control" id="titulo_sistemas" placeholder="Digite o título">
@@ -148,12 +148,12 @@
 
       <!--CARGOS DE INTERESSE OBJETIVO-->
       <div class="row">
-        <div class="col-sm-12">
+        <div class="col-md-12">
           <h4>Cargos de Interesse/Objetivo:</h4>
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-12">
+        <div class="col-md-12">
           <div class="form-group">
             <label for="cargos_interesse">Cargos de Interesse/Objetivo:</label>
             <input type="text" class="form-control" id="cargos_interesse" placeholder="Digite os cargos de interesse ou objetivo">
@@ -163,30 +163,30 @@
 
       <!-- TRAJETORIA PROFISSIONAL -->
       <div class="row">
-        <div class="col-sm-12">
+        <div class="col-md-12">
           <h4>Trajetória Profissional:</h4>
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <div class="form-group">
             <label for="nome_empresa">Nome da Empresa:</label>
             <input type="text" class="form-control" id="nome_empresa" placeholder="Digite o nome da empresa">
           </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <div class="form-group">
             <label for="cargo">Cargo:</label>
             <input type="text" class="form-control" id="cargo" placeholder="Digite o cargo">
           </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <div class="form-group">
             <label for="data_entrada">Data de Entrada:</label>
             <input type="text" class="form-control" id="data_entrada" placeholder="Digite a data de entrada">
           </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <div class="form-group">
             <label for="data_saida">Data de Saída:</label>
             <input type="text" class="form-control" id="data_saida" placeholder="Digite a data de saída">
@@ -194,7 +194,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-12">
+        <div class="col-md-12">
           <div class="form-group">
             <label for="atividades_realizadas">Atividades Realizadas:</label>
             <textarea class="form-control" id="atividades_realizadas" rows="3" placeholder="Descreva as atividades realizadas"></textarea>
@@ -204,30 +204,30 @@
 
       <!-- Linha 5 -->
       <div class="row">
-        <div class="col-sm-12">
+        <div class="col-md-12">
           <h4>Cursos Livres:</h4>
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <div class="form-group">
             <label for="curso_realizado">Curso:</label>
             <input type="text" class="form-control" id="curso_realizado1" placeholder="Digite o curso">
           </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <div class="form-group">
             <label for="instituicao_curso">Instituição:</label>
             <input type="text" class="form-control" id="instituicao_curso1" placeholder="Digite a instituição">
           </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <div class="form-group">
             <label for="data_curso">Data:</label>
             <input type="text" class="form-control" id="data_curso1" placeholder="Digite a data">
           </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <div class="form-group">
             <label for="adicionar_curso">&nbsp;</label>
             <button type="button" class="btn btn-primary btn-block">Adicionar +</button>
@@ -237,18 +237,18 @@
 
       <!-- IDIOMA -->
       <div class="row">
-        <div class="col-sm-12">
+        <div class="col-md-12">
           <h4>Idiomas:</h4>
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-9">
+        <div class="col-md-9">
           <div class="form-group">
             <label for="idioma">Idioma:</label>
             <input type="text" class="form-control" id="idioma" placeholder="Digite o idioma">
           </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <div class="form-group">
             <label for="adicionar_idioma">&nbsp;</label>
             <button type="button" class="btn btn-primary btn-block">Adicionar +</button>
@@ -258,7 +258,7 @@
 
       <!-- Linha 7 -->
       <div class="row">
-        <div class="col-sm-12">
+        <div class="col-md-12">
           <button id="btnCallAPI" type="button" class="btn btn-primary btn-block">Enviar</button>
         </div>
       </div>
@@ -309,7 +309,7 @@
       console.log("linkedin1:", linkedin1);
       console.log("Curso1:", curso1);
       console.log("Instituicao1:", instituicao1);
-      console.log("Data1:", data1);
+      console.log("data1:", data1);
       console.log("titulo_sistemas", titulo_sistemas);
       console.log("cargos_interesse", cargos_interesse);
       console.log("Nome Empresa:", nome_empresa);
@@ -382,12 +382,155 @@
     document.getElementById("btnCallAPI").addEventListener("click", enviarParaAPI);
 
     $(document).ready(function() {
-      $('#data1').mask('00/00/0000');
-      $('#data_entrada').mask('00/00/0000');
-      $('#data_saida').mask('00/00/0000');
-      $('#data_curso1').mask('00/00/0000');
+      // Máscaras para campos de texto
+      $('#nome').mask('A', {
+        translation: {
+          'A': { pattern: /[A-Za-z\s]/ }
+        }
+      });
+      $('#bairro').mask('A', {
+        translation: {
+          'A': { pattern: /[A-Za-z\s]/ }
+        }
+      });
+      $('#cidade').mask('A', {
+        translation: {
+          'A': { pattern: /[A-Za-z\s]/ }
+        }
+      });
+      $('#email').mask('A', {
+        translation: {
+          'A': { pattern: /[\w@\-.+]/, recursive: true }
+        }
+      });
+      $('#linkedin1').mask('A', {
+        translation: {
+          'A': { pattern: /[\w@\-.+]/, recursive: true }
+        }
+      });
+      $('#idioma').mask('A', {
+        translation: {
+          'A': { pattern: /[A-Za-z\s]/ }
+        }
+      });
+      $('#curso1').mask('A', {
+        translation: {
+          'A': { pattern: /[A-Za-z\s]/ }
+        }
+      });
+      $('#instituicao1').mask('A', {
+        translation: {
+          'A': { pattern: /[A-Za-z\s]/ }
+        }
+      });
+      $('#titulo_sistemas').mask('A', {
+        translation: {
+          'A': { pattern: /[A-Za-z\s]/ }
+        }
+      });
+      $('#cargos_interesse').mask('A', {
+        translation: {
+          'A': { pattern: /[A-Za-z\s]/ }
+        }
+      });
+      $('#nome_empresa').mask('A', {
+        translation: {
+          'A': { pattern: /[A-Za-z\s]/ }
+        }
+      });
+      $('#cargo').mask('A', {
+        translation: {
+          'A': { pattern: /[A-Za-z\s]/ }
+        }
+      });
+      $('#atividades_realizadas').mask('A', {
+        translation: {
+          'A': { pattern: /[A-Za-z\s]/ }
+        }
+      });
+      $('#curso_realizado1').mask('A', {
+        translation: {
+          'A': { pattern: /[A-Za-z\s]/ }
+        }
+      });
+      $('#instituicao_curso1').mask('A', {
+        translation: {
+          'A': { pattern: /[A-Za-z\s]/ }
+        }
+      });
+   
+    
+      // Máscaras para campos de celular e CPF
+      $('#celular').mask('(00)00000-0000');
+      $('#cpf').mask('000.000.000-00');
+    
+      // Máscara para data (DD/MM/AAAA)
+      $('#data1, #data_entrada, #data_saida, #data_curso1').mask('00/00/0000');
     });
+    
+    // Adicionar novo campo de formação acadêmica
+    $(".btnAdicionarFormacao").click(function() {
+      let novoCampo = `
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="curso">Curso:</label>
+          <input type="text" class="form-control" id="curso" placeholder="Digite o curso">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="instituicao">Instituição:</label>
+          <input type="text" class="form-control" id="instituicao" placeholder="Digite a instituição">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="data">Data:</label>
+          <input type="text" class="form-control" id="data" placeholder="Digite a data">
+        </div>
+      </div>`;
+      $(".formacao-academica").append(novoCampo);
+    });
+
+    // Adicionar novo campo de cursos livres
+    $(".btnAdicionarCurso").click(function() {
+      let novoCampo = `
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="curso_realizado">Curso:</label>
+          <input type="text" class="form-control" id="curso_realizado" placeholder="Digite o curso">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="instituicao_curso">Instituição:</label>
+          <input type="text" class="form-control" id="instituicao_curso" placeholder="Digite a instituição">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="data_curso">Data:</label>
+          <input type="text" class="form-control" id="data_curso" placeholder="Digite a data">
+        </div>
+      </div>`;
+      $(".cursos-livres").append(novoCampo);
+    });
+
+    // Adicionar novo campo de idiomas
+    $(".btnAdicionarIdioma").click(function() {
+      let novoCampo = `
+      <div class="col-md-9">
+        <div class="form-group">
+          <label for="idioma">Idioma:</label>
+          <input type="text" class="form-control" id="idioma" placeholder="Digite o idioma">
+        </div>
+      </div>`;
+      $(".idiomas").append(novoCampo);
+    });
+    
   </script>
+
+
 </body>
 
 </html>
