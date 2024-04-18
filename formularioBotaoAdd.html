@@ -23,7 +23,8 @@
         <div class="col-md-3">
           <div class="form-group">
             <label for="celular">Celular/WhatsApp:*</label>
-            <input type="tel" class="form-control" id="celular" placeholder="Digite seu celular (XX)XXXXX-XXXX" required>
+            <input type="tel" class="form-control" id="celular" placeholder="Digite seu celular (XX)XXXXX-XXXX"
+              required>
           </div>
         </div>
         <div class="col-md-3">
@@ -156,7 +157,8 @@
         <div class="col-md-12">
           <div class="form-group">
             <label for="cargos_interesse">Cargos de Interesse/Objetivo:</label>
-            <input type="text" class="form-control" id="cargos_interesse" placeholder="Digite os cargos de interesse ou objetivo">
+            <input type="text" class="form-control" id="cargos_interesse"
+              placeholder="Digite os cargos de interesse ou objetivo">
           </div>
         </div>
       </div>
@@ -197,7 +199,8 @@
         <div class="col-md-12">
           <div class="form-group">
             <label for="atividades_realizadas">Atividades Realizadas:</label>
-            <textarea class="form-control" id="atividades_realizadas" rows="3" placeholder="Descreva as atividades realizadas"></textarea>
+            <textarea class="form-control" id="atividades_realizadas" rows="3"
+              placeholder="Descreva as atividades realizadas"></textarea>
           </div>
         </div>
       </div>
@@ -305,7 +308,7 @@
     // Função para enviar os dados do formulário para a API
     function enviarParaAPI() {
       console.log("Enviando dados para a API...");
-      
+
       // Captura dos valores dos campos do formulário
       let dadosFormulario = capturarValoresFormulario();
 
@@ -313,7 +316,8 @@
       const options = {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': 'Basic YXBpc2VydmljZWZvcm06N2xZK1RUUSc5N1J3'
         },
         body: JSON.stringify(dadosFormulario)
       };
@@ -329,16 +333,17 @@
         .then(data => {
           // Tratar a resposta da API, se necessário
           console.log('Dados enviados com sucesso:', data);
-          window.location.href = "https://triadecarreira.com.br/obrigado/";
           // Aqui você pode fazer algo após o envio bem-sucedido, como exibir uma mensagem de sucesso ou redirecionar o usuário para outra página
         })
         .catch(error => {
           console.error('Erro:', error);
           // Aqui você pode lidar com o erro, como exibir uma mensagem de erro para o usuário
+        }).finally(() => {
+          window.location.href = "https://triadecarreira.com.br/obrigado/";
         });
     }
 
-    $(document).ready(function() {
+    $(document).ready(function () {
       // Máscaras para os campos do formulário
       $('#celular').mask('(00)00000-0000');
       $('#cpf').mask('000.000.000-00', { reverse: true });
@@ -346,7 +351,7 @@
 
       // Adicionar e remover campos de formação acadêmica
       var formacaoCount = 1;
-      $(".btnAdicionarFormacao").click(function() {
+      $(".btnAdicionarFormacao").click(function () {
         formacaoCount++;
         var newRow = '<div class="row formacao-academica">' +
           '<div class="col-md-3">' +
@@ -378,12 +383,12 @@
       });
 
       // Remover campos de formação acadêmica
-      $(".container").on('click', '.btnRemoverFormacao', function() {
+      $(".container").on('click', '.btnRemoverFormacao', function () {
         $(this).closest('.formacao-academica').remove();
       });
 
       // Ação do botão para chamar a função de enviar dados para a API
-      $("#btnCallAPI").click(function() {
+      $("#btnCallAPI").click(function () {
         enviarParaAPI();
       });
     });
