@@ -10,32 +10,44 @@
 </head>
 
 <body>
-  <div class="container mt-5">
-    <form class="text-uppercase">
+  <div class="container mt-5 mb-5">
+    <form class="text-uppercase needs-validation" id="myForm" novalidate>
       <!-- Linha 1 DADOS PESSOAIS-->
-      <div class="row ">
+      <div class="row g-3">
         <div class="col-md-3">
-          <div class="form-group">
-            <label for="nome">Nome Completo: *</label>
+          <div class="form-floating">
             <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo" required>
+            <label for="nome">Nome Completo: *</label>
+            <div class="invalid-feedback">
+              <!--Por favor, insira um nome válido.-->
+            </div>
           </div>
         </div>
         <div class="col-md-3">
-          <div class="form-group">
-            <label for="celular">Celular/WhatsApp:*</label>
+          <div class="form-floating">
             <input type="tel" class="form-control" id="celular" placeholder="Digite seu celular (XX)XXXXX-XXXX" required>
+            <label for="celular">Celular/WhatsApp:*</label>
+            <div class="invalid-feedback">
+              <!--Por favor, insira um número de celular válido.-->
+            </div>
           </div>
         </div>
         <div class="col-md-3">
-          <div class="form-group">
-            <label for="email">Email: *</label>
+          <div class="form-floating">
             <input type="email" class="form-control" id="email" placeholder="Digite seu email" required>
+            <label for="email">Email: *</label>
+            <div class="invalid-feedback">
+              <!--Por favor, insira um email válido.--> 
+            </div>
           </div>
         </div>
         <div class="col-md-3">
-          <div class="form-group">
-            <label for="cpf">CPF: *</label>
+          <div class="form-floating">
             <input type="text" class="form-control" id="cpf" placeholder="Digite seu CPF " required>
+            <label for="cpf">CPF: *</label>
+            <div class="invalid-feedback">
+              <!--Por favor, insira um CPF válido.-->
+            </div>
           </div>
         </div>
       </div>
@@ -99,12 +111,12 @@
       </div>
 
       <!-- FORMAÇÃO ACADEMICA-->
-      <div class="row">
+      <div class="row formacao-academica">
         <div class="col-md-12">
           <h4>Formação Acadêmica:</h4>
         </div>
       </div>
-      <div class="row">
+      <div class="row formacao-academica">
         <div class="col-md-3">
           <div class="form-group">
             <label for="curso1">Curso:</label>
@@ -126,7 +138,7 @@
         <div class="col-md-3">
           <div class="form-group">
             <label for="adicionar">&nbsp;</label>
-            <button type="button" class="btn btn-primary btn-block">Adicionar +</button>
+            <button type="button" class="btn btn-primary btn-block btnAdicionarFormacao">Adicionar +</button>
           </div>
         </div>
       </div>
@@ -156,7 +168,8 @@
         <div class="col-md-12">
           <div class="form-group">
             <label for="cargos_interesse">Cargos de Interesse/Objetivo:</label>
-            <input type="text" class="form-control" id="cargos_interesse" placeholder="Digite os cargos de interesse ou objetivo">
+            <input type="text" class="form-control" id="cargos_interesse"
+              placeholder="Digite os cargos de interesse ou objetivo">
           </div>
         </div>
       </div>
@@ -197,18 +210,19 @@
         <div class="col-md-12">
           <div class="form-group">
             <label for="atividades_realizadas">Atividades Realizadas:</label>
-            <textarea class="form-control" id="atividades_realizadas" rows="3" placeholder="Descreva as atividades realizadas"></textarea>
+            <textarea class="form-control" id="atividades_realizadas" rows="3"
+              placeholder="Descreva as atividades realizadas"></textarea>
           </div>
         </div>
       </div>
 
       <!-- Linha 5 -->
-      <div class="row">
+      <div class="row cursos-livres">
         <div class="col-md-12">
           <h4>Cursos Livres:</h4>
         </div>
       </div>
-      <div class="row">
+      <div class="row cursos-livres">
         <div class="col-md-3">
           <div class="form-group">
             <label for="curso_realizado">Curso:</label>
@@ -230,18 +244,18 @@
         <div class="col-md-3">
           <div class="form-group">
             <label for="adicionar_curso">&nbsp;</label>
-            <button type="button" class="btn btn-primary btn-block">Adicionar +</button>
+            <button type="button" class="btn btn-primary btn-block btnAdicionarCurso">Adicionar +</button>
           </div>
         </div>
       </div>
 
       <!-- IDIOMA -->
-      <div class="row">
+      <div class="row idiomas">
         <div class="col-md-12">
           <h4>Idiomas:</h4>
         </div>
       </div>
-      <div class="row">
+      <div class="row idiomas">
         <div class="col-md-9">
           <div class="form-group">
             <label for="idioma">Idioma:</label>
@@ -251,7 +265,7 @@
         <div class="col-md-3">
           <div class="form-group">
             <label for="adicionar_idioma">&nbsp;</label>
-            <button type="button" class="btn btn-primary btn-block">Adicionar +</button>
+            <button type="button" class="btn btn-primary btn-block btnAdicionarIdioma">Adicionar +</button>
           </div>
         </div>
       </div>
@@ -272,265 +286,102 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
   <!--Chamada para API  -->
   <script>
-    function enviarParaAPI() {
-      console.log("Capturando dados do formulário...");
-
-      let nome = document.getElementById("nome").value;
-      let celular = document.getElementById("celular").value;
-      let email = document.getElementById("email").value;
-      let cpf = document.getElementById("cpf").value;
-      let bairro = document.getElementById("bairro").value;
-      let cidade = document.getElementById("cidade").value;
-      let uf = document.getElementById("uf").value;
-      let linkedin1 = document.getElementById("linkedin1").value;
-      let curso1 = document.getElementById("curso1").value;
-      let instituicao1 = document.getElementById("instituicao1").value;
-      let data1 = document.getElementById("data1").value;
-      let titulo_sistemas = document.getElementById("titulo_sistemas").value;
-      let cargos_interesse = document.getElementById("cargos_interesse").value;
-      let nome_empresa = document.getElementById("nome_empresa").value;
-      let cargo = document.getElementById("cargo").value;
-      let data_entrada = document.getElementById("data_entrada").value;
-      let data_saida = document.getElementById("data_saida").value;
-      let atividades_realizadas = document.getElementById("atividades_realizadas").value;
-      let curso_realizado1 = document.getElementById("curso_realizado1").value;
-      let instituicao_curso1 = document.getElementById("instituicao_curso1").value;
-      let data_curso1 = document.getElementById("data_curso1").value;
-      let idioma = document.getElementById("idioma").value;
-
-      console.log("Valores dos campos do formulário:");
-      console.log("Nome:", nome);
-      console.log("Celular:", celular);
-      console.log("Email:", email);
-      console.log("CPF:", cpf);
-      console.log("BAIRRO:", bairro);
-      console.log("Cidade:", cidade);
-      console.log("UF:", uf);
-      console.log("linkedin1:", linkedin1);
-      console.log("Curso1:", curso1);
-      console.log("Instituicao1:", instituicao1);
-      console.log("data1:", data1);
-      console.log("titulo_sistemas", titulo_sistemas);
-      console.log("cargos_interesse", cargos_interesse);
-      console.log("Nome Empresa:", nome_empresa);
-      console.log("Cargo:", cargo);
-      console.log("data_entrada:", data_entrada);
-      console.log("data_saida:", data_saida);
-      console.log("atividades_realizadas:", atividades_realizadas);
-      console.log("curso_realizado1:", curso_realizado1);
-      console.log("instituicao_curso1:", instituicao_curso1);
-      console.log("data_curso1:", data_curso1);
-      console.log("idioma:", idioma);
-
-      const myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
-      myHeaders.append("Authorization", "Basic YXBpc2VydmljZWZvcm06N2xZK1RUUSc5N1J3");
-
-      const data = {
-        // DADOS PESSOAIS
-        "firstname": nome,
-        "phone": celular,
-        "email": email,
-        "cpf": cpf,
-        "bairro": bairro,
-        "cidade": cidade,
-        "uf": uf,
-        "linkedin1": linkedin1,
-        "curso1": curso1,
-        "instituicao": instituicao1,
-        "data1": data1,
-        "titulo_sistemas": titulo_sistemas,
-        "cargos_interesse": cargos_interesse,
-        "nome_empresa": nome_empresa,
-        "cargo": cargo,
-        "data_entrada": data_entrada,
-        "data_saida": data_saida,
-        "atividades_realizadas": atividades_realizadas,
-        "curso_realizado1": curso_realizado1,
-        "instituicao_curso1": instituicao_curso1,
-        "data_curso1": data_curso1,
-        "idioma": idioma,
-      };
-
-      console.log("Enviando solicitação para a API...");
-      fetch("http://conteudo.triadecarreira.com.br/api/contacts/new", {
-          method: "POST",
-          headers: myHeaders,
-          body: JSON.stringify(data)
-        })
-        .then(response => {
-          if (!response.ok) {
-            throw new Error("Erro ao enviar solicitação para a API: " + response.statusText);
-          }
-          console.log("Solicitação enviada com sucesso para a API.");
-          return response.json();
-        })
-        .then(data => {
-          console.log("Resposta da API:", data);
-          // Adicione aqui o código para lidar com a resposta da API, se necessário
-          window.location.href = "https://triadecarreira.com.br/obrigado/";
-        })
-        .catch(error => {
-          console.error("Erro ao enviar solicitação para a API:", error);
-        })
-        .finally(() => {
-          // Redirecionar para a página de agradecimento
-          window.location.href = "https://triadecarreira.com.br/obrigado/";
-        });
+    // Função para validar os campos obrigatórios
+    function validarCamposObrigatorios() {
+      let form = document.getElementById('myForm');
+      if (form.checkValidity() === false) {
+        event.preventDefault();
+        event.stopPropagation();
+        form.classList.add('was-validated');
+        return false;
+      }
+      form.classList.add('was-validated');
+      return true;
     }
 
-    document.getElementById("btnCallAPI").addEventListener("click", enviarParaAPI);
+    // Função para capturar os valores dos campos do formulário
+    function capturarValoresFormulario() {
+      let dadosFormulario = {
+        // DADOS PESSOAIS
+        nome: document.getElementById("nome").value,
+        celular: document.getElementById("celular").value,
+        email: document.getElementById("email").value,
+        cpf: document.getElementById("cpf").value,
+        bairro: document.getElementById("bairro").value,
+        cidade: document.getElementById("cidade").value,
+        uf: document.getElementById("uf").value,
+        linkedin1: document.getElementById("linkedin1").value,
+        curso1: document.getElementById("curso1").value,
+        instituicao1: document.getElementById("instituicao1").value,
+        data1: document.getElementById("data1").value,
+        titulo_sistemas: document.getElementById("titulo_sistemas").value,
+        cargos_interesse: document.getElementById("cargos_interesse").value,
+        nome_empresa: document.getElementById("nome_empresa").value,
+        cargo: document.getElementById("cargo").value,
+        data_entrada: document.getElementById("data_entrada").value,
+        data_saida: document.getElementById("data_saida").value,
+        atividades_realizadas: document.getElementById("atividades_realizadas").value,
+        curso_realizado1: document.getElementById("curso_realizado1").value,
+        instituicao_curso1: document.getElementById("instituicao_curso1").value,
+        data_curso1: document.getElementById("data_curso1").value,
+        idioma: document.getElementById("idioma").value
+      };
+      return dadosFormulario;
+    }
 
-    $(document).ready(function() {
-      // Máscaras para campos de texto
-      $('#nome').mask('A', {
-        translation: {
-          'A': { pattern: /[A-Za-z\s]/ }
-        }
-      });
-      $('#bairro').mask('A', {
-        translation: {
-          'A': { pattern: /[A-Za-z\s]/ }
-        }
-      });
-      $('#cidade').mask('A', {
-        translation: {
-          'A': { pattern: /[A-Za-z\s]/ }
-        }
-      });
-      $('#email').mask('A', {
-        translation: {
-          'A': { pattern: /[\w@\-.+]/, recursive: true }
-        }
-      });
-      $('#linkedin1').mask('A', {
-        translation: {
-          'A': { pattern: /[\w@\-.+]/, recursive: true }
-        }
-      });
-      $('#idioma').mask('A', {
-        translation: {
-          'A': { pattern: /[A-Za-z\s]/ }
-        }
-      });
-      $('#curso1').mask('A', {
-        translation: {
-          'A': { pattern: /[A-Za-z\s]/ }
-        }
-      });
-      $('#instituicao1').mask('A', {
-        translation: {
-          'A': { pattern: /[A-Za-z\s]/ }
-        }
-      });
-      $('#titulo_sistemas').mask('A', {
-        translation: {
-          'A': { pattern: /[A-Za-z\s]/ }
-        }
-      });
-      $('#cargos_interesse').mask('A', {
-        translation: {
-          'A': { pattern: /[A-Za-z\s]/ }
-        }
-      });
-      $('#nome_empresa').mask('A', {
-        translation: {
-          'A': { pattern: /[A-Za-z\s]/ }
-        }
-      });
-      $('#cargo').mask('A', {
-        translation: {
-          'A': { pattern: /[A-Za-z\s]/ }
-        }
-      });
-      $('#atividades_realizadas').mask('A', {
-        translation: {
-          'A': { pattern: /[A-Za-z\s]/ }
-        }
-      });
-      $('#curso_realizado1').mask('A', {
-        translation: {
-          'A': { pattern: /[A-Za-z\s]/ }
-        }
-      });
-      $('#instituicao_curso1').mask('A', {
-        translation: {
-          'A': { pattern: /[A-Za-z\s]/ }
-        }
-      });
-   
+    // Event listener para o botão de envio do formulário
+    document.getElementById('btnCallAPI').addEventListener('click', function () {
+      if (validarCamposObrigatorios()) {
+        let dadosFormulario = capturarValoresFormulario();
+        // Aqui você pode chamar sua API para enviar os dados do formulário
+        console.log("Dados do formulário:", dadosFormulario);
+        // Exemplo de chamada de API com jQuery
+        
+        const options = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Basic YXBpc2VydmljZWZvcm06N2xZK1RUUSc5N1J3'
+          },
+          body: JSON.stringify(dadosFormulario)
+        };
     
-      // Máscaras para campos de celular e CPF
-      $('#celular').mask('(00)00000-0000');
-      $('#cpf').mask('000.000.000-00');
-    
-      // Máscara para data (DD/MM/AAAA)
-      $('#data1, #data_entrada, #data_saida, #data_curso1').mask('00/00/0000');
+        // Fazer a solicitação para a API
+        fetch("https://conteudo.triadecarreira.com.br/api/contacts/new", options)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Erro ao enviar os dados para a API');
+            }
+            return response.json();
+          })
+          .then(data => {
+            // Tratar a resposta da API, se necessário
+            console.log('Dados enviados com sucesso:', data);
+            // Aqui você pode fazer algo após o envio bem-sucedido, como exibir uma mensagem de sucesso ou redirecionar o usuário para outra página
+          })
+          .catch(error => {
+            console.error('Erro:', error);
+            // Aqui você pode lidar com o erro, como exibir uma mensagem de erro para o usuário
+          }).finally(() => {
+            window.location.href = "https://triadecarreira.com.br/obrigado/";
+          });
+      }
+      
     });
-    
-    // Adicionar novo campo de formação acadêmica
-    $(".btnAdicionarFormacao").click(function() {
-      let novoCampo = `
-      <div class="col-md-3">
-        <div class="form-group">
-          <label for="curso">Curso:</label>
-          <input type="text" class="form-control" id="curso" placeholder="Digite o curso">
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="form-group">
-          <label for="instituicao">Instituição:</label>
-          <input type="text" class="form-control" id="instituicao" placeholder="Digite a instituição">
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="form-group">
-          <label for="data">Data:</label>
-          <input type="text" class="form-control" id="data" placeholder="Digite a data">
-        </div>
-      </div>`;
-      $(".formacao-academica").append(novoCampo);
-    });
-
-    // Adicionar novo campo de cursos livres
-    $(".btnAdicionarCurso").click(function() {
-      let novoCampo = `
-      <div class="col-md-3">
-        <div class="form-group">
-          <label for="curso_realizado">Curso:</label>
-          <input type="text" class="form-control" id="curso_realizado" placeholder="Digite o curso">
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="form-group">
-          <label for="instituicao_curso">Instituição:</label>
-          <input type="text" class="form-control" id="instituicao_curso" placeholder="Digite a instituição">
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="form-group">
-          <label for="data_curso">Data:</label>
-          <input type="text" class="form-control" id="data_curso" placeholder="Digite a data">
-        </div>
-      </div>`;
-      $(".cursos-livres").append(novoCampo);
-    });
-
-    // Adicionar novo campo de idiomas
-    $(".btnAdicionarIdioma").click(function() {
-      let novoCampo = `
-      <div class="col-md-9">
-        <div class="form-group">
-          <label for="idioma">Idioma:</label>
-          <input type="text" class="form-control" id="idioma" placeholder="Digite o idioma">
-        </div>
-      </div>`;
-      $(".idiomas").append(novoCampo);
-    });
-    
   </script>
-
-
+  <!-- Script para aplicar máscara nos campos -->
+  <script>
+    $(document).ready(function () {
+      $('#celular').mask('(00)00000-0000');
+      $('#cpf').mask('000.000.000-00', {
+        reverse: true
+      });
+      $('#data1').mask('00/00/0000');
+      $('#data_saida').mask('00/00/0000');
+      $('#data_entrada').mask('00/00/0000');
+      $('#data_curso1').mask('00/00/0000');
+    });
+  </script>
 </body>
 
 </html>
