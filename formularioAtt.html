@@ -16,8 +16,8 @@
       <div class="row g-3">
         <div class="col-md-3">
           <div class="form-floating">
-            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo" required>
             <label for="nome">Nome Completo: *</label>
+            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo" required>
             <div class="invalid-feedback">
               <!--Por favor, insira um nome válido.-->
             </div>
@@ -25,8 +25,9 @@
         </div>
         <div class="col-md-3">
           <div class="form-floating">
-            <input type="tel" class="form-control" id="celular" placeholder="Digite seu celular (XX)XXXXX-XXXX" required>
             <label for="celular">Celular/WhatsApp:*</label>
+            <input type="tel" class="form-control" id="celular" placeholder="Digite seu celular (XX)XXXXX-XXXX"
+              required>
             <div class="invalid-feedback">
               <!--Por favor, insira um número de celular válido.-->
             </div>
@@ -34,17 +35,17 @@
         </div>
         <div class="col-md-3">
           <div class="form-floating">
-            <input type="email" class="form-control" id="email" placeholder="Digite seu email" required>
             <label for="email">Email: *</label>
+            <input type="email" class="form-control" id="email" placeholder="Digite seu email" required>
             <div class="invalid-feedback">
-              <!--Por favor, insira um email válido.--> 
+              <!--Por favor, insira um email válido.-->
             </div>
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-floating">
-            <input type="text" class="form-control" id="cpf" placeholder="Digite seu CPF " required>
             <label for="cpf">CPF: *</label>
+            <input type="text" class="form-control" id="cpf" placeholder="Digite seu CPF " required>
             <div class="invalid-feedback">
               <!--Por favor, insira um CPF válido.-->
             </div>
@@ -57,19 +58,19 @@
         <div class="col-md-3">
           <div class="form-group">
             <label for="bairro">Bairro:</label>
-            <input type="text" class="form-control" id="bairro" placeholder="Digite seu bairro">
+            <input type="text" class="form-control" id="bairro" placeholder="Digite seu bairro" required>
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-group">
             <label for="cidade">Cidade:</label>
-            <input type="text" class="form-control" id="cidade" placeholder="Digite sua cidade">
+            <input type="text" class="form-control" id="cidade" placeholder="Digite sua cidade" required>
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-group">
             <label for="uf">UF:</label>
-            <select class="form-control" id="uf">
+            <select class="form-control" id="uf" required>
               <option selected>Escolha...</option>
               <option>AC</option>
               <option>AL</option>
@@ -120,19 +121,19 @@
         <div class="col-md-3">
           <div class="form-group">
             <label for="curso1">Curso:</label>
-            <input type="text" class="form-control" id="curso1" placeholder="Digite o curso">
+            <input type="text" class="form-control" id="curso1" placeholder="Digite o curso" required>
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-group">
             <label for="instituicao1">Instituição:</label>
-            <input type="text" class="form-control" id="instituicao1" placeholder="Digite a instituição">
+            <input type="text" class="form-control" id="instituicao1" placeholder="Digite a instituição" required>
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-group">
             <label for="data1">Data:</label>
-            <input type="text" class="form-control" id="data1" placeholder="Digite a data">
+            <input type="text" class="form-control" id="data1" placeholder="Digite a data" required>
           </div>
         </div>
         <div class="col-md-3">
@@ -153,7 +154,7 @@
         <div class="col-md-12">
           <div class="form-group">
             <label for="titulo_sistemas">Título:</label>
-            <input type="text" class="form-control" id="titulo_sistemas" placeholder="Digite o título">
+            <input type="text" class="form-control" id="titulo_sistemas" placeholder="Digite o título" required>
           </div>
         </div>
       </div>
@@ -169,7 +170,7 @@
           <div class="form-group">
             <label for="cargos_interesse">Cargos de Interesse/Objetivo:</label>
             <input type="text" class="form-control" id="cargos_interesse"
-              placeholder="Digite os cargos de interesse ou objetivo">
+              placeholder="Digite os cargos de interesse ou objetivo" required>
           </div>
         </div>
       </div>
@@ -184,25 +185,25 @@
         <div class="col-md-3">
           <div class="form-group">
             <label for="nome_empresa">Nome da Empresa:</label>
-            <input type="text" class="form-control" id="nome_empresa" placeholder="Digite o nome da empresa">
+            <input type="text" class="form-control" id="nome_empresa" placeholder="Digite o nome da empresa" required>
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-group">
             <label for="cargo">Cargo:</label>
-            <input type="text" class="form-control" id="cargo" placeholder="Digite o cargo">
+            <input type="text" class="form-control" id="cargo" placeholder="Digite o cargo" required>
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-group">
             <label for="data_entrada">Data de Entrada:</label>
-            <input type="text" class="form-control" id="data_entrada" placeholder="Digite a data de entrada">
+            <input type="text" class="form-control" id="data_entrada" placeholder="Digite a data de entrada" required>
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-group">
             <label for="data_saida">Data de Saída:</label>
-            <input type="text" class="form-control" id="data_saida" placeholder="Digite a data de saída">
+            <input type="text" class="form-control" id="data_saida" placeholder="Digite a data de saída" >
           </div>
         </div>
       </div>
@@ -211,7 +212,7 @@
           <div class="form-group">
             <label for="atividades_realizadas">Atividades Realizadas:</label>
             <textarea class="form-control" id="atividades_realizadas" rows="3"
-              placeholder="Descreva as atividades realizadas"></textarea>
+              placeholder="Descreva as atividades realizadas" required></textarea>
           </div>
         </div>
       </div>
@@ -259,7 +260,7 @@
         <div class="col-md-9">
           <div class="form-group">
             <label for="idioma">Idioma:</label>
-            <input type="text" class="form-control" id="idioma" placeholder="Digite o idioma">
+            <input type="text" class="form-control" id="idioma" placeholder="Digite o idioma" required>
           </div>
         </div>
         <div class="col-md-3">
@@ -287,9 +288,35 @@
   <!--Chamada para API  -->
   <script>
     // Função para validar os campos obrigatórios
+    // function validarCamposObrigatorios() {
+    //   let form = document.getElementById('myForm');
+    //   if (form.checkValidity() === false) {
+    //     event.preventDefault();
+    //     event.stopPropagation();
+    //     form.classList.add('was-validated');
+    //     return false;
+    //   }
+    //   form.classList.add('was-validated');
+    //   return true;
+    // }
+
     function validarCamposObrigatorios() {
       let form = document.getElementById('myForm');
-      if (form.checkValidity() === false) {
+      let inputs = form.querySelectorAll('input[required]'); // Seleciona todos os campos obrigatórios
+      let isValid = true;
+
+      inputs.forEach(input => {
+        if (input.type === 'email') { // Verifica se é um campo de e-mail
+          if (!validarEmail(input.value)) { // Chama a função para validar o email
+            isValid = false;
+            input.classList.add('is-invalid'); // Adiciona classe de inválido se o email não for válido
+          } else {
+            input.classList.remove('is-invalid'); // Remove classe de inválido se o email for válido
+          }
+        }
+      });
+
+      if (form.checkValidity() === false && !isValid) { // Verifica se há campos inválidos
         event.preventDefault();
         event.stopPropagation();
         form.classList.add('was-validated');
@@ -299,12 +326,18 @@
       return true;
     }
 
+    function validarEmail(email) {
+      // Expressão regular para validar e-mail
+      let re = /\S+@\S+\.\S+/;
+      return re.test(email);
+    }
+
     // Função para capturar os valores dos campos do formulário
     function capturarValoresFormulario() {
       let dadosFormulario = {
         // DADOS PESSOAIS
-        nome: document.getElementById("nome").value,
-        celular: document.getElementById("celular").value,
+        firstname: document.getElementById("nome").value,
+        phone: document.getElementById("celular").value,
         email: document.getElementById("email").value,
         cpf: document.getElementById("cpf").value,
         bairro: document.getElementById("bairro").value,
@@ -336,7 +369,7 @@
         // Aqui você pode chamar sua API para enviar os dados do formulário
         console.log("Dados do formulário:", dadosFormulario);
         // Exemplo de chamada de API com jQuery
-        
+
         const options = {
           method: 'POST',
           headers: {
@@ -345,7 +378,7 @@
           },
           body: JSON.stringify(dadosFormulario)
         };
-    
+
         // Fazer a solicitação para a API
         fetch("https://conteudo.triadecarreira.com.br/api/contacts/new", options)
           .then(response => {
@@ -366,11 +399,9 @@
             window.location.href = "https://triadecarreira.com.br/obrigado/";
           });
       }
-      
+
     });
-  </script>
-  <!-- Script para aplicar máscara nos campos -->
-  <script>
+
     $(document).ready(function () {
       $('#celular').mask('(00)00000-0000');
       $('#cpf').mask('000.000.000-00', {
@@ -412,14 +443,14 @@
           '</div>';
         $(".formacao-academica:last").after(newRow);
       });
-  
+
       // Remover campos de formação acadêmica
       $(".container").on('click', '.btnRemoverFormacao', function () {
         $(this).closest('.formacao-academica').remove();
       });
-  
+
       var cursosCount = 1;
-      $(".btnAdicionarCurso").click(function() {
+      $(".btnAdicionarCurso").click(function () {
         cursosCount++; //CURSOS LIVRES
         var newRow = '<div class="row cursos-livres">' +
           '<div class="col-md-3">' +
@@ -449,13 +480,13 @@
           '</div>';
         $(".cursos-livres:last").after(newRow);
       });
-  
-      $(".container").on('click', '.btnRemoverCurso', function() {
+
+      $(".container").on('click', '.btnRemoverCurso', function () {
         $(this).closest('.cursos-livres').remove();
       });
-  
+
       var idiomasCount = 1;
-      $(".btnAdicionarIdioma").click(function() {
+      $(".btnAdicionarIdioma").click(function () {
         idiomasCount++; //IDIOMAS
         var newRow = '<div class="row idiomas">' +
           '<div class="col-md-9">' +
@@ -473,12 +504,13 @@
           '</div>';
         $(".idiomas:last").after(newRow);
       });
-  
-      $(".container").on('click', '.btnRemoverIdioma', function() {
+
+      $(".container").on('click', '.btnRemoverIdioma', function () {
         $(this).closest('.idiomas').remove();
       });
 
     });
+
   </script>
 </body>
 
