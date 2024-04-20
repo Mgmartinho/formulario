@@ -203,7 +203,7 @@
         <div class="col-md-3">
           <div class="form-group">
             <label for="data_saida">Data de Saída:</label>
-            <input type="text" class="form-control" id="data_saida" placeholder="Digite a data de saída" >
+            <input type="text" class="form-control" id="data_saida" placeholder="Digite a data de saída">
           </div>
         </div>
       </div>
@@ -334,6 +334,11 @@
 
     // Função para capturar os valores dos campos do formulário
     function capturarValoresFormulario() {
+
+
+
+
+
       let dadosFormulario = {
         // DADOS PESSOAIS
         firstname: document.getElementById("nome").value,
@@ -344,7 +349,10 @@
         cidade: document.getElementById("cidade").value,
         uf: document.getElementById("uf").value,
         linkedin1: document.getElementById("linkedin1").value,
-        curso1: document.getElementById("curso1").value,
+        // curso1: document.getElementById("curso1").value,
+        // curso2: document.getElementById("curso2").value,
+        // curso3: document.getElementById("curso3").value,
+        // curso4: document.getElementById("curso4").value,
         instituicao1: document.getElementById("instituicao1").value,
         data1: document.getElementById("data1").value,
         titulo_sistemas: document.getElementById("titulo_sistemas").value,
@@ -354,26 +362,51 @@
         data_entrada: document.getElementById("data_entrada").value,
         data_saida: document.getElementById("data_saida").value,
         atividades_realizadas: document.getElementById("atividades_realizadas").value,
-        cursos_livres: [],
-        idiomas: []
       };
-    
+
+
+      //Formacao Academica
+      for (var i = 1; i < 10; i++) {
+        var elemento = document.getElementById("curso" + i);
+        if (elemento) {
+          dadosFormulario["curso" + i] = elemento.value;
+        }
+
+        var elemento = document.getElementById("data" + i);
+        if (elemento) {
+          dadosFormulario["data" + i] = elemento.value;
+        }
+
+        var elemento = document.getElementById("instituicao" + i);
+        if (elemento) {
+          dadosFormulario["instituicao" + i] = elemento.value;
+        }
+      }
+
+      //TODO: Cursos Livres
+
+      //TODO: Idioma
+
+
+
+      console.log("dadosFormulario: ", dadosFormulario);
+
       // Capturar dados dos cursos livres adicionais
-      document.querySelectorAll('[id^="curso_realizado"]').forEach((element, index) => {
-        dadosFormulario.cursos_livres.push({
-          curso: document.getElementById("curso_realizado" + (index + 1)).value,
-          instituicao: document.getElementById("instituicao_curso" + (index + 1)).value,
-          data: document.getElementById("data_curso" + (index + 1)).value
-        });
-      });
-    
+      // document.querySelectorAll('[id^="curso_realizado"]').forEach((element, index) => {
+      //   dadosFormulario.cursos_livres.push({
+      //     curso: document.getElementById("curso_realizado" + (index + 1)).value,
+      //     instituicao: document.getElementById("instituicao_curso" + (index + 1)).value,
+      //     data: document.getElementById("data_curso" + (index + 1)).value
+      //   });
+      // });
+
       // Capturar dados dos idiomas adicionais
-      document.querySelectorAll('[id^="idioma"]').forEach((element, index) => {
-        dadosFormulario.idiomas.push({
-          idioma: document.getElementById("idioma" + (index + 1)).value
-        });
-      });
-    
+      // document.querySelectorAll('[id^="idioma"]').forEach((element, index) => {
+      //   dadosFormulario.idiomas.push({
+      //     idioma: document.getElementById("idioma" + (index + 1)).value
+      //   });
+      // });
+
       return dadosFormulario;
     }
     // Event listener para o botão de envio do formulário
@@ -410,7 +443,7 @@
             console.error('Erro:', error);
             // Aqui você pode lidar com o erro, como exibir uma mensagem de erro para o usuário
           }).finally(() => {
-            window.location.href = "https://triadecarreira.com.br/obrigado/";
+            // window.location.href = "https://triadecarreira.com.br/obrigado/";
           });
       }
 
@@ -456,8 +489,8 @@
           '</div>' +
           '</div>';
         $(".formacao-academica:last").after(newRow);
-         // Aplicar a máscara de data no novo campo de data
-         $('#data' + formacaoCount).mask('00/00/0000');
+        // Aplicar a máscara de data no novo campo de data
+        $('#data' + formacaoCount).mask('00/00/0000');
       });
 
       // Remover campos de formação acadêmica
@@ -495,8 +528,8 @@
           '</div>' +
           '</div>';
         $(".cursos-livres:last").after(newRow);
-         // Aplicar a máscara de data no novo campo de data
-         $('#data_curso' + cursosCount).mask('00/00/0000');
+        // Aplicar a máscara de data no novo campo de data
+        $('#data_curso' + cursosCount).mask('00/00/0000');
       });
 
       $(".container").on('click', '.btnRemoverCurso', function () {
