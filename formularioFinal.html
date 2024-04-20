@@ -260,7 +260,7 @@
         <div class="col-md-9">
           <div class="form-group">
             <label for="idioma">Idioma:</label>
-            <input type="text" class="form-control" id="idioma" placeholder="Digite o idioma" required>
+            <input type="text" class="form-control" id="idioma1" placeholder="Digite o idioma" required>
           </div>
         </div>
         <div class="col-md-3">
@@ -349,12 +349,6 @@
         cidade: document.getElementById("cidade").value,
         uf: document.getElementById("uf").value,
         linkedin1: document.getElementById("linkedin1").value,
-        // curso1: document.getElementById("curso1").value,
-        // curso2: document.getElementById("curso2").value,
-        // curso3: document.getElementById("curso3").value,
-        // curso4: document.getElementById("curso4").value,
-        instituicao1: document.getElementById("instituicao1").value,
-        data1: document.getElementById("data1").value,
         titulo_sistemas: document.getElementById("titulo_sistemas").value,
         cargos_interesse: document.getElementById("cargos_interesse").value,
         nome_empresa: document.getElementById("nome_empresa").value,
@@ -384,28 +378,33 @@
       }
 
       //TODO: Cursos Livres
+      for (var i = 1; i < 10; i++) {
+        var elemento = document.getElementById("curso_realizado" + i);
+        if (elemento) {
+          dadosFormulario["curso_realizado" + i] = elemento.value;
+        }
+
+        var elemento = document.getElementById("instituicao_curso" + i);
+        if (elemento) {
+          dadosFormulario["instituicao_curso" + i] = elemento.value;
+        }
+
+        var elemento = document.getElementById("data_curso" + i);
+        if (elemento) {
+          dadosFormulario["data_curso" + i] = elemento.value;
+        }
+      }
 
       //TODO: Idioma
-
+      for (var i = 1; i < 10; i++) {
+        var elemento = document.getElementById("idioma" + i);
+        if (elemento) {
+          dadosFormulario["idioma" + i] = elemento.value;
+        }
+      }
 
 
       console.log("dadosFormulario: ", dadosFormulario);
-
-      // Capturar dados dos cursos livres adicionais
-      // document.querySelectorAll('[id^="curso_realizado"]').forEach((element, index) => {
-      //   dadosFormulario.cursos_livres.push({
-      //     curso: document.getElementById("curso_realizado" + (index + 1)).value,
-      //     instituicao: document.getElementById("instituicao_curso" + (index + 1)).value,
-      //     data: document.getElementById("data_curso" + (index + 1)).value
-      //   });
-      // });
-
-      // Capturar dados dos idiomas adicionais
-      // document.querySelectorAll('[id^="idioma"]').forEach((element, index) => {
-      //   dadosFormulario.idiomas.push({
-      //     idioma: document.getElementById("idioma" + (index + 1)).value
-      //   });
-      // });
 
       return dadosFormulario;
     }
