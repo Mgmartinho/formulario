@@ -201,7 +201,7 @@ get_header(); ?>
           <h4>Trajetória Profissional:</h4>
         </div>
       </div>
-      <div class="row">
+      <div class="row trajetoria-profissional">
         <div class="col-md-3">
           <div class="form-group">
             <label for="nome_empresa">Nome da Empresa:</label>
@@ -233,6 +233,18 @@ get_header(); ?>
             <label for="atividades_realizadas">Atividades Realizadas:</label>
             <textarea class="form-control" id="atividades_realizadas" rows="3"
               placeholder="Descreva as atividades realizadas" required></textarea>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="adicionar_trajetoria">&nbsp;</label>
+            <button type="button" class="btn btn-primary btn-block btnAdicionarTrajetoria">Adicionar +</button>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="adicionar_trajetoria">&nbsp;</label>
+            <button type="button" class="btn btn-primary btn-block btnAdicionarTrajetoria">Adicionar +</button>
           </div>
         </div>
       </div>
@@ -562,7 +574,7 @@ get_header(); ?>
           '<div class="col-md-9">' +
           '<div class="form-group">' +
           '<label for="idioma' + idiomasCount + '">Idioma:</label>' +
-          '<input type="text" class="form-control" id="idioma' + idiomasCount + '" placeholder="Digite o idioma">' +
+          '<input type="text" class="form-control" id="idioma1' + idiomasCount + '" placeholder="Digite o idioma">' +
           '</div>' +
           '</div>' +
           '<div class="col-md-3">' +
@@ -578,6 +590,60 @@ get_header(); ?>
       $(".container").on('click', '.btnRemoverIdioma', function () {
         $(this).closest('.idiomas').remove();
       });
+      var trajetoriaCount = 1;
+      $(".btnAdicionarTrajetoria").click(function () {
+        trajetoriaCount++; //TRAJETORIA PROFISSIONAL
+        var newRow = '<div class="row trajetoria-profissional">' +
+          '<div class="col-md-3">' +
+          '<div class="form-group">' +
+          '<label for="nome_empresa' + trajetoriaCount + '">Nome da Empresa:</label>' +
+          '<input type="text" class="form-control" id="nome_empresa' + trajetoriaCount + '" placeholder="Digite o nome da empresa" required>' +
+          '</div>' +
+          '</div>' +
+          '<div class="col-md-3">' +
+          '<div class="form-group">' +
+          '<label for="cargo' + trajetoriaCount + '">Cargo:</label>' +
+          '<input type="text" class="form-control" id="cargo' + trajetoriaCount + '" placeholder="Digite o cargo" required>' +
+          '</div>' +
+          '</div>' +
+          '<div class="col-md-3">' +
+          '<div class="form-group">' +
+          '<label for="data_entrada' + trajetoriaCount + '">Data de Entrada:</label>' +
+          '<input type="text" class="form-control" id="data_entrada' + trajetoriaCount + '" placeholder="Digite a data de entrada" required>' +
+          '</div>' +
+          '</div>' +
+          '<div class="col-md-3">' +
+          '<div class="form-group">' +
+          '<label for="data_saida' + trajetoriaCount + '">Data de Saída:</label>' +
+          '<input type="text" class="form-control" id="data_saida' + trajetoriaCount + '" placeholder="Digite a data de saída">' +
+          '</div>' +
+          '</div>' +
+          '</div>' +
+          '<div class="row">' +
+          '<div class="col-md-12">' +
+          '<div class="form-group">' +
+          '<label for="atividades_realizadas' + trajetoriaCount + '">Atividades Realizadas:</label>' +
+          '<textarea class="form-control" id="atividades_realizadas' + trajetoriaCount + '" rows="3" ' +
+          'placeholder="Descreva as atividades realizadas" required></textarea>' +
+          '</div>' +
+          '</div>' +
+          '</div>' +
+          '<div class="row">' +
+          '<div class="col-md-12">' +
+          '<div class="form-group">' +
+          '<label for="adicionar_trajetoria">&nbsp;</label>' +
+          '<button type="button" class="btn btn-danger btn-block btnRemoverTrajetoria">Remover</button>' +
+          '</div>' +
+          '</div>' +
+          '</div>';
+        $(".trajetoria-profissional:last").after(newRow);
+      });
+  
+      $(".container").on('click', '.btnRemoverTrajetoria', function () {
+        $(this).closest('.trajetoria-profissional').prev().remove(); // Remove a linha de atividades realizadas
+        $(this).closest('.trajetoria-profissional').remove();
+      });
+  
 
     });
 
