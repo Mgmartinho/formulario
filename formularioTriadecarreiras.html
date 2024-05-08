@@ -1,36 +1,18 @@
-<?php
-
-/**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two requigreen darken-1 files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * e.g., it puts together the home page when no home.php file exists.
- *
- * Learn more: {@link https://codex.wordpress.org/Template_Hierarchy}
- *
- *
- * Template Name : Ohio
- *
- * Descrição : Test
- */
-
-get_header(); ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulário</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
 </head>
 
+<br>
+<br>
+<br>
 <body>
-  <div class="container mt-5 mb-5">
+   <div class="container mt-5 mb-5">
     <form class="text-uppercase needs-validation" id="myForm" novalidate>
       <!-- Linha 1 DADOS PESSOAIS-->
       <div class="row g-3">
@@ -126,7 +108,8 @@ get_header(); ?>
         <div class="col-md-3">
           <div class="form-group">
             <label for="linkedin1">LinkedIn:</label>
-            <input type="text" class="form-control" id="linkedin1" placeholder="Digite seu LinkedIn">
+            <input type="text" class="form-control" id="linkedin1" placeholder="Copiar URL de sua página">
+            <p class="text-muted">Caso não possua uma conta será necessário criá-la. </p>
           </div>
         </div>
       </div>
@@ -135,6 +118,7 @@ get_header(); ?>
       <div class="row formacao-academica">
         <div class="col-md-12">
           <h4>Formação Acadêmica:</h4>
+          <p class="text-muted">Tecnólogo, Graduação, Pós, MBA, Mestrado, outros</p>
         </div>
       </div>
       <div class="row formacao-academica">
@@ -168,16 +152,34 @@ get_header(); ?>
       <div class="row">
         <div class="col-md-12">
           <h4>Sistemas e Informática:</h4>
+          <p class="text-muted">Ex: Office, Excel, Java, SAP, outros </p>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
           <div class="form-group">
             <label for="titulo_sistemas">Título:</label>
-            <input type="text" class="form-control" id="titulo_sistemas" placeholder="Digite o título" required>
+            <input type="text" class="form-control" id="titulo_sistemas" placeholder="OFFICE, EXCEL, JAVA, SAP" required>
           </div>
         </div>
       </div>
+      
+<!--CONHECIMENTOS E HABILIDADES-->
+    <div class="row">
+      <div class="col-md-12">
+        <h4>Descreva seus principais conhecimentos e habilidades:</h4>
+    
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="conhecimentos">Conhecimento e Habilidades:</label>
+          <input type="text" class="form-control" id="conhecimentos" 
+          placeholder="Ex.: Análise de Sistemas, Administração de Banco de Dados, Gestão de Equipes" required>
+        </div>
+      </div>
+    </div>
 
       <!--CARGOS DE INTERESSE OBJETIVO-->
       <div class="row">
@@ -196,52 +198,47 @@ get_header(); ?>
       </div>
 
       <!-- TRAJETORIA PROFISSIONAL -->
-      <div class="row">
+      <div class="row trajetoria-profissional">
         <div class="col-md-12">
           <h4>Trajetória Profissional:</h4>
+          <p class="text-muted"> caso tenha ocupado mais de um cargo em uma empresa precisa especificar separadamente</p>
         </div>
       </div>
       <div class="row trajetoria-profissional">
         <div class="col-md-3">
           <div class="form-group">
             <label for="nome_empresa">Nome da Empresa:</label>
-            <input type="text" class="form-control" id="nome_empresa" placeholder="Digite o nome da empresa" required>
+            <input type="text" class="form-control" id="nome_empresa1" placeholder="Digite o nome da empresa" required>
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-group">
             <label for="cargo">Cargo:</label>
-            <input type="text" class="form-control" id="cargo" placeholder="Digite o cargo" required>
+            <input type="text" class="form-control" id="cargo1" placeholder="Digite o cargo" required>
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-group">
             <label for="data_entrada">Data de Entrada:</label>
-            <input type="text" class="form-control" id="data_entrada" placeholder="Digite a data de entrada" required>
+            <input type="text" class="form-control" id="data_entrada1" placeholder="Digite a data de entrada" required>
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-group">
             <label for="data_saida">Data de Saída:</label>
-            <input type="text" class="form-control" id="data_saida" placeholder="Digite a data de saída">
+            <input type="text" class="form-control" id="data_saida1" placeholder="Digite a data de saída" >
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row trajetoria-profissional">
         <div class="col-md-12">
           <div class="form-group">
             <label for="atividades_realizadas">Atividades Realizadas:</label>
-            <textarea class="form-control" id="atividades_realizadas" rows="3"
+            <textarea class="form-control" id="atividades_realizadas1" rows="3"
               placeholder="Descreva as atividades realizadas" required></textarea>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="form-group">
-            <label for="adicionar_trajetoria">&nbsp;</label>
-            <button type="button" class="btn btn-primary btn-block btnAdicionarTrajetoria">Adicionar +</button>
-          </div>
-        </div>
-        <div class="col-md-3">
+        <div class="col-md-12">
           <div class="form-group">
             <label for="adicionar_trajetoria">&nbsp;</label>
             <button type="button" class="btn btn-primary btn-block btnAdicionarTrajetoria">Adicionar +</button>
@@ -252,14 +249,14 @@ get_header(); ?>
       <!-- Linha 5 -->
       <div class="row cursos-livres">
         <div class="col-md-12">
-          <h4>Cursos Livres:</h4>
+          <h4>Cursos e Certificações:</h4>
         </div>
       </div>
       <div class="row cursos-livres">
         <div class="col-md-3">
           <div class="form-group">
             <label for="curso_realizado">Curso:</label>
-            <input type="text" class="form-control" id="curso_realizado1" placeholder="Digite o curso">
+            <input type="text" class="form-control" id="curso_realizado1" placeholder="Ex: Excel, informática, Nr’s, Treinamento, Capacitação">
           </div>
         </div>
         <div class="col-md-3">
@@ -292,7 +289,7 @@ get_header(); ?>
         <div class="col-md-9">
           <div class="form-group">
             <label for="idioma">Idioma:</label>
-            <input type="text" class="form-control" id="idioma1" placeholder="Digite o idioma" required>
+            <input type="text" class="form-control" id="idioma1" placeholder="Nível (básico, intermediário, avançado)" required>
           </div>
         </div>
         <div class="col-md-3">
@@ -312,13 +309,15 @@ get_header(); ?>
     </form>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <!-- jQuery Mask Plugin -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
   <!--Chamada para API  -->
-  <script>
+<script>
     // Função para validar os campos obrigatórios
     // function validarCamposObrigatorios() {
     //   let form = document.getElementById('myForm');
@@ -383,11 +382,12 @@ get_header(); ?>
         linkedin1: document.getElementById("linkedin1").value,
         titulo_sistemas: document.getElementById("titulo_sistemas").value,
         cargos_interesse: document.getElementById("cargos_interesse").value,
-        nome_empresa: document.getElementById("nome_empresa").value,
+        /*nome_empresa: document.getElementById("nome_empresa").value,
         cargo: document.getElementById("cargo").value,
         data_entrada: document.getElementById("data_entrada").value,
         data_saida: document.getElementById("data_saida").value,
-        atividades_realizadas: document.getElementById("atividades_realizadas").value,
+        atividades_realizadas: document.getElementById("atividades_realizadas").value,*/
+        conhecimentos: document.getElementById("conhecimentos").value,
       };
 
 
@@ -474,7 +474,7 @@ get_header(); ?>
             console.error('Erro:', error);
             // Aqui você pode lidar com o erro, como exibir uma mensagem de erro para o usuário
           }).finally(() => {
-            // window.location.href = "https://triadecarreira.com.br/obrigado/";
+             window.location.href = "https://triadecarreira.com.br/obrigado/";
           });
       }
 
@@ -528,6 +528,64 @@ get_header(); ?>
       $(".container").on('click', '.btnRemoverFormacao', function () {
         $(this).closest('.formacao-academica').remove();
       });
+      //FUNCIONALIDADES BOTÃO TRAJETÓRIA PROFISSIONAL
+      $(".btnAdicionarTrajetoria").click(function (event) { // Corrigido o seletor
+        var trajetoriaCount = $(".trajetoria-profissional").length + 1;
+        var newRow = '<div class="trajetoria-profissional">' +
+          '<div class="row">' +
+          '<div class="col-md-3">' +
+          '<div class="form-group">' +
+          '<label for="nome_empresa' + trajetoriaCount + '">Nome da Empresa:</label>' +
+          '<input type="text" class="form-control" id="nome_empresa' + trajetoriaCount + '" placeholder="Digite o nome da empresa" required>' +
+          '</div>' +
+          '</div>' +
+          '<div class="col-md-3">' +
+          '<div class="form-group">' +
+          '<label for="cargo' + trajetoriaCount + '">Cargo:</label>' +
+          '<input type="text" class="form-control" id="cargo' + trajetoriaCount + '" placeholder="Digite o cargo" required>' +
+          '</div>' +
+          '</div>' +
+          '<div class="col-md-3">' +
+          '<div class="form-group">' +
+          '<label for="data_entrada' + trajetoriaCount + '">Data de Entrada:</label>' +
+          '<input type="text" class="form-control" id="data_entrada' + trajetoriaCount + '" placeholder="Digite a data de entrada" required>' +
+          '</div>' +
+          '</div>' +
+          '<div class="col-md-3">' +
+          '<div class="form-group">' +
+          '<label for="data_saida' + trajetoriaCount + '">Data de Saída:</label>' +
+          '<input type="text" class="form-control" id="data_saida' + trajetoriaCount + '" placeholder="Digite a data de saída">' +
+          '</div>' +
+          '</div>' +
+          '</div>' +
+          '<div class="row">' +
+          '<div class="col-md-12">' +
+          '<div class="form-group">' +
+          '<label for="atividades_realizadas' + trajetoriaCount + '">Atividades Realizadas:</label>' +
+          '<textarea class="form-control" id="atividades_realizadas' + trajetoriaCount + '" rows="3" ' +
+          'placeholder="Descreva as atividades realizadas" required></textarea>' +
+          '</div>' +
+          '</div>' +
+          '</div>' +
+          '<div class="row">' +
+          '<div class="col-md-12">' +
+          '<div class="form-group">' +
+          '<button type="button" class="btn btn-danger btn-block btnRemoverTrajetoria">Remover Trajetória</button>' +
+          '</div>' +
+          '</div>' +
+          '</div>' +
+          '</div>';
+        $(".trajetoria-profissional:last").after(newRow);
+        // Aplicar a máscara de data no novo campo de data
+        $('#data_entrada' + trajetoriaCount).mask('00/00/0000');
+        $('#data_saida' + trajetoriaCount).mask('00/00/0000');
+      });
+
+      // Remover campo de trajetória profissional ao clicar no botão "Remover Trajetória"
+      $(".container").on('click', '.btnRemoverTrajetoria', function () {
+        $(this).closest('.trajetoria-profissional').remove();
+      });
+      //FECHAMENTO TRAJETÓRIA PROFISSIONAL
 
       var cursosCount = 1;
       $(".btnAdicionarCurso").click(function () {
@@ -574,7 +632,7 @@ get_header(); ?>
           '<div class="col-md-9">' +
           '<div class="form-group">' +
           '<label for="idioma' + idiomasCount + '">Idioma:</label>' +
-          '<input type="text" class="form-control" id="idioma1' + idiomasCount + '" placeholder="Digite o idioma">' +
+          '<input type="text" class="form-control" id="idioma' + idiomasCount + '" placeholder="Digite o idioma">' +
           '</div>' +
           '</div>' +
           '<div class="col-md-3">' +
@@ -590,67 +648,8 @@ get_header(); ?>
       $(".container").on('click', '.btnRemoverIdioma', function () {
         $(this).closest('.idiomas').remove();
       });
-      var trajetoriaCount = 1;
-      $(".btnAdicionarTrajetoria").click(function () {
-        trajetoriaCount++; //TRAJETORIA PROFISSIONAL
-        var newRow = '<div class="row trajetoria-profissional">' +
-          '<div class="col-md-3">' +
-          '<div class="form-group">' +
-          '<label for="nome_empresa' + trajetoriaCount + '">Nome da Empresa:</label>' +
-          '<input type="text" class="form-control" id="nome_empresa' + trajetoriaCount + '" placeholder="Digite o nome da empresa" required>' +
-          '</div>' +
-          '</div>' +
-          '<div class="col-md-3">' +
-          '<div class="form-group">' +
-          '<label for="cargo' + trajetoriaCount + '">Cargo:</label>' +
-          '<input type="text" class="form-control" id="cargo' + trajetoriaCount + '" placeholder="Digite o cargo" required>' +
-          '</div>' +
-          '</div>' +
-          '<div class="col-md-3">' +
-          '<div class="form-group">' +
-          '<label for="data_entrada' + trajetoriaCount + '">Data de Entrada:</label>' +
-          '<input type="text" class="form-control" id="data_entrada' + trajetoriaCount + '" placeholder="Digite a data de entrada" required>' +
-          '</div>' +
-          '</div>' +
-          '<div class="col-md-3">' +
-          '<div class="form-group">' +
-          '<label for="data_saida' + trajetoriaCount + '">Data de Saída:</label>' +
-          '<input type="text" class="form-control" id="data_saida' + trajetoriaCount + '" placeholder="Digite a data de saída">' +
-          '</div>' +
-          '</div>' +
-          '</div>' +
-          '<div class="row">' +
-          '<div class="col-md-12">' +
-          '<div class="form-group">' +
-          '<label for="atividades_realizadas' + trajetoriaCount + '">Atividades Realizadas:</label>' +
-          '<textarea class="form-control" id="atividades_realizadas' + trajetoriaCount + '" rows="3" ' +
-          'placeholder="Descreva as atividades realizadas" required></textarea>' +
-          '</div>' +
-          '</div>' +
-          '</div>' +
-          '<div class="row">' +
-          '<div class="col-md-12">' +
-          '<div class="form-group">' +
-          '<label for="adicionar_trajetoria">&nbsp;</label>' +
-          '<button type="button" class="btn btn-danger btn-block btnRemoverTrajetoria">Remover</button>' +
-          '</div>' +
-          '</div>' +
-          '</div>';
-        $(".trajetoria-profissional:last").after(newRow);
-      });
-  
-      $(".container").on('click', '.btnRemoverTrajetoria', function () {
-        $(this).closest('.trajetoria-profissional').prev().remove(); // Remove a linha de atividades realizadas
-        $(this).closest('.trajetoria-profissional').remove();
-      });
-  
-
     });
 
   </script>
 </body>
-
 </html>
-
-
-<?php get_footer(); ?>
