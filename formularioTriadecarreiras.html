@@ -366,10 +366,6 @@
     // Função para capturar os valores dos campos do formulário
     function capturarValoresFormulario() {
 
-
-
-
-
       let dadosFormulario = {
         // DADOS PESSOAIS
         firstname: document.getElementById("nome").value,
@@ -406,6 +402,34 @@
         var elemento = document.getElementById("instituicao" + i);
         if (elemento) {
           dadosFormulario["instituicao" + i] = elemento.value;
+        }
+      }
+
+      //TODO: TRAJETORIA PROFISSIONAL
+      for (var i = 1; i < 10; i++) {
+        var elemento = document.getElementById("nome_empresa" + i);
+        if (elemento) {
+          dadosFormulario["nome_empresa" + i] = elemento.value;
+        }
+
+        var elemento = document.getElementById("cargo" + i);
+        if (elemento) {
+          dadosFormulario["cargo" + i] = elemento.value;
+        }
+
+        var elemento = document.getElementById("data_entrada" + i);
+        if (elemento) {
+          dadosFormulario["data_entrada" + i] = elemento.value;
+        }
+
+        var elemento = document.getElementById("data_saida" + i);
+        if (elemento) {
+          dadosFormulario["data_saida" + i] = elemento.value;
+        }
+
+        var elemento = document.getElementById("atividades_realizadas" + i);
+        if (elemento) {
+          dadosFormulario["atividades_realizadas" + i] = elemento.value;
         }
       }
 
