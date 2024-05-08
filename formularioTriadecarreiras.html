@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +12,9 @@
 <br>
 <br>
 <br>
+
 <body>
-   <div class="container mt-5 mb-5">
+  <div class="container mt-5 mb-5">
     <form class="text-uppercase needs-validation" id="myForm" novalidate>
       <!-- Linha 1 DADOS PESSOAIS-->
       <div class="row g-3">
@@ -159,27 +161,28 @@
         <div class="col-md-12">
           <div class="form-group">
             <label for="titulo_sistemas">Título:</label>
-            <input type="text" class="form-control" id="titulo_sistemas" placeholder="OFFICE, EXCEL, JAVA, SAP" required>
+            <input type="text" class="form-control" id="titulo_sistemas" placeholder="OFFICE, EXCEL, JAVA, SAP"
+              required>
           </div>
         </div>
       </div>
-      
-<!--CONHECIMENTOS E HABILIDADES-->
-    <div class="row">
-      <div class="col-md-12">
-        <h4>Descreva seus principais conhecimentos e habilidades:</h4>
-    
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="form-group">
-          <label for="conhecimentos">Conhecimento e Habilidades:</label>
-          <input type="text" class="form-control" id="conhecimentos" 
-          placeholder="Ex.: Análise de Sistemas, Administração de Banco de Dados, Gestão de Equipes" required>
+
+      <!--CONHECIMENTOS E HABILIDADES-->
+      <div class="row">
+        <div class="col-md-12">
+          <h4>Descreva seus principais conhecimentos e habilidades:</h4>
+
         </div>
       </div>
-    </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="conhecimentos">Conhecimento e Habilidades:</label>
+            <input type="text" class="form-control" id="conhecimentos"
+              placeholder="Ex.: Análise de Sistemas, Administração de Banco de Dados, Gestão de Equipes" required>
+          </div>
+        </div>
+      </div>
 
       <!--CARGOS DE INTERESSE OBJETIVO-->
       <div class="row">
@@ -201,7 +204,8 @@
       <div class="row trajetoria-profissional">
         <div class="col-md-12">
           <h4>Trajetória Profissional:</h4>
-          <p class="text-muted"> caso tenha ocupado mais de um cargo em uma empresa precisa especificar separadamente</p>
+          <p class="text-muted"> caso tenha ocupado mais de um cargo em uma empresa precisa especificar separadamente
+          </p>
         </div>
       </div>
       <div class="row trajetoria-profissional">
@@ -226,7 +230,7 @@
         <div class="col-md-3">
           <div class="form-group">
             <label for="data_saida">Data de Saída:</label>
-            <input type="text" class="form-control" id="data_saida1" placeholder="Digite a data de saída" >
+            <input type="text" class="form-control" id="data_saida1" placeholder="Digite a data de saída">
           </div>
         </div>
       </div>
@@ -256,7 +260,8 @@
         <div class="col-md-3">
           <div class="form-group">
             <label for="curso_realizado">Curso:</label>
-            <input type="text" class="form-control" id="curso_realizado1" placeholder="Ex: Excel, informática, Nr’s, Treinamento, Capacitação">
+            <input type="text" class="form-control" id="curso_realizado1"
+              placeholder="Ex: Excel, informática, Nr’s, Treinamento, Capacitação">
           </div>
         </div>
         <div class="col-md-3">
@@ -289,7 +294,8 @@
         <div class="col-md-9">
           <div class="form-group">
             <label for="idioma">Idioma:</label>
-            <input type="text" class="form-control" id="idioma1" placeholder="Nível (básico, intermediário, avançado)" required>
+            <input type="text" class="form-control" id="idioma1" placeholder="Nível (básico, intermediário, avançado)"
+              required>
           </div>
         </div>
         <div class="col-md-3">
@@ -301,23 +307,31 @@
       </div>
 
       <!-- Linha 7 -->
+
       <div class="row">
         <div class="col-md-12">
-          <button id="btnCallAPI" type="button" class="btn btn-primary btn-block">Enviar</button>
+          <!-- Botão de envio comentado -->
+          <!-- <button id="btnCallAPI" type="button" class="btn btn-primary btn-block">Enviar</button> -->
+          <!-- Botão de envio descomentado -->
+          <button id="btnEnviar" type="button" class="btn btn-primary btn-block">Enviar</button>
+          <!-- Botão com spinner oculto -->
+          <button id="btnEnviando" class="btn btn-primary btn-block" style="display: none;">
+            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            <span class="visually-hidden">Aguarde Enviando Dados...</span>
+          </button>
         </div>
       </div>
-    </form>
-  </div>
+  
 
 
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <!-- jQuery Mask Plugin -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
   <!--Chamada para API  -->
-<script>
+  <script>
     // Função para validar os campos obrigatórios
     // function validarCamposObrigatorios() {
     //   let form = document.getElementById('myForm');
@@ -464,13 +478,17 @@
 
       return dadosFormulario;
     }
-    // Event listener para o botão de envio do formulário
-    document.getElementById('btnCallAPI').addEventListener('click', function () {
-      if (validarCamposObrigatorios()) {
-        let dadosFormulario = capturarValoresFormulario();
-        // Aqui você pode chamar sua API para enviar os dados do formulário
-        console.log("Dados do formulário:", dadosFormulario);
-        // Exemplo de chamada de API com jQuery
+  // Event listener para o botão de envio do formulário
+document.getElementById('btnEnviar').addEventListener('click', function () {
+  if (validarCamposObrigatorios()) {
+    let dadosFormulario = capturarValoresFormulario();
+    // Aqui você pode chamar sua API para enviar os dados do formulário
+    console.log("Dados do formulário:", dadosFormulario);
+    // Exemplo de chamada de API com jQuery
+
+    // Desativa o botão de envio e ativa o botão com o spinner
+    document.getElementById('btnEnviar').style.display = 'none';
+    document.getElementById('btnEnviando').style.display = 'block';
 
         const options = {
           method: 'POST',
@@ -498,7 +516,7 @@
             console.error('Erro:', error);
             // Aqui você pode lidar com o erro, como exibir uma mensagem de erro para o usuário
           }).finally(() => {
-             window.location.href = "https://triadecarreira.com.br/obrigado/";
+            window.location.href = "https://triadecarreira.com.br/obrigado/";
           });
       }
 
@@ -677,4 +695,5 @@
 
   </script>
 </body>
+
 </html>
