@@ -238,8 +238,9 @@
         <div class="col-md-12">
           <div class="form-group">
             <label for="atividades_realizadas">Atividades Realizadas:</label>
-            <textarea class="form-control" id="atividades_realizadas1" rows="3"
+            <textarea class="form-control" id="atividades_realizadas_new1" rows="3" maxlength="1000"
               placeholder="Descreva as atividades realizadas" required></textarea>
+              <small id="charCount" class="form-text text-muted">1000 caracteres</small>
           </div>
         </div>
         <div class="col-md-12">
@@ -402,7 +403,7 @@
 
 
           //Formacao Academica
-          for (var i = 1; i < 10; i++) {
+          for (var i = 1; i < 3; i++) {
             var elemento = document.getElementById("curso" + i);
             if (elemento) {
               dadosFormulario["curso" + i] = elemento.value;
@@ -420,7 +421,7 @@
           }
 
           //TODO: TRAJETORIA PROFISSIONAL
-          for (var i = 1; i < 10; i++) {
+          for (var i = 1; i < 3; i++) {
             var elemento = document.getElementById("nome_empresa" + i);
             if (elemento) {
               dadosFormulario["nome_empresa" + i] = elemento.value;
@@ -441,14 +442,14 @@
               dadosFormulario["data_saida" + i] = elemento.value;
             }
 
-            var elemento = document.getElementById("atividades_realizadas" + i);
+            var elemento = document.getElementById("atividades_realizadas_new1" + i);
             if (elemento) {
-              dadosFormulario["atividades_realizadas" + i] = elemento.value;
+              dadosFormulario["atividades_realizadas_new1" + i] = elemento.value;
             }
           }
 
           //TODO: Cursos Livres
-          for (var i = 1; i < 10; i++) {
+          for (var i = 1; i < 3; i++) {
             var elemento = document.getElementById("curso_realizado" + i);
             if (elemento) {
               dadosFormulario["curso_realizado" + i] = elemento.value;
@@ -466,7 +467,7 @@
           }
 
           //TODO: Idioma
-          for (var i = 1; i < 10; i++) {
+          for (var i = 1; i < 3; i++) {
             var elemento = document.getElementById("idioma" + i);
             if (elemento) {
               dadosFormulario["idioma" + i] = elemento.value;
@@ -605,8 +606,9 @@
               '<div class="col-md-12">' +
               '<div class="form-group">' +
               '<label for="atividades_realizadas' + trajetoriaCount + '">Atividades Realizadas:</label>' +
-              '<textarea class="form-control" id="atividades_realizadas' + trajetoriaCount + '" rows="3" ' +
+              '<textarea class="form-control" id="atividades_realizadas_new' + trajetoriaCount + '" rows="3" maxlength="1000"' +
               'placeholder="Descreva as atividades realizadas" required></textarea>' +
+              '<small id="charCount" class="form-text text-muted">1000 caracteres</small>'+
               '</div>' +
               '</div>' +
               '</div>' +
@@ -627,6 +629,8 @@
           // Remover campo de trajetória profissional ao clicar no botão "Remover Trajetória"
           $(".container").on('click', '.btnRemoverTrajetoria', function () {
             $(this).closest('.trajetoria-profissional').remove();
+
+
           });
           //FECHAMENTO TRAJETÓRIA PROFISSIONAL
 
@@ -694,6 +698,7 @@
         });
 
       </script>
+
 </body>
 
 </html>

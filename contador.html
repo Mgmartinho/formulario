@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Texto</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="form-group">
+            <label for="textInput">Digite seu texto:</label>
+            <textarea class="form-control" id="textInput" rows="3" maxlength="1000"></textarea>
+            <small id="charCount" class="form-text text-muted">1000 caracteres</small>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const maxLength = 1000;
+            const textInput = document.getElementById('textInput');
+            const charCount = document.getElementById('charCount');
+    
+            textInput.addEventListener('input', () => {
+                const length = textInput.value.length;
+                const remaining = maxLength - length;
+                charCount.textContent = `${remaining} caracteres restantes`;
+            });
+        });
+    </script>
+
+</body>
+</html>
