@@ -204,32 +204,32 @@
       <div class="row trajetoria-profissional">
         <div class="col-md-12">
           <h4>Trajetória Profissional:</h4>
-          <p class="text-muted"> caso tenha ocupado mais de um cargo em uma empresa precisa especificar separadamente
+          <p class="text-muted">Caso tenha ocupado mais de um cargo em uma empresa, precisa especificar separadamente.
           </p>
         </div>
       </div>
       <div class="row trajetoria-profissional">
         <div class="col-md-3">
           <div class="form-group">
-            <label for="nome_empresa">Nome da Empresa:</label>
+            <label for="nome_empresa1">Nome da Empresa:</label>
             <input type="text" class="form-control" id="nome_empresa1" placeholder="Digite o nome da empresa" required>
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-group">
-            <label for="cargo">Cargo:</label>
+            <label for="cargo1">Cargo:</label>
             <input type="text" class="form-control" id="cargo1" placeholder="Digite o cargo" required>
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-group">
-            <label for="data_entrada">Data de Entrada:</label>
+            <label for="data_entrada1">Data de Entrada:</label>
             <input type="text" class="form-control" id="data_entrada1" placeholder="Digite a data de entrada" required>
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-group">
-            <label for="data_saida">Data de Saída:</label>
+            <label for="data_saida1">Data de Saída:</label>
             <input type="text" class="form-control" id="data_saida1" placeholder="Digite a data de saída">
           </div>
         </div>
@@ -237,10 +237,10 @@
       <div class="row trajetoria-profissional">
         <div class="col-md-12">
           <div class="form-group">
-            <label for="atividades_realizadas">Atividades Realizadas:</label>
-            <textarea class="form-control" id="atividades_realizadas_new1" rows="3" maxlength="1000"
+            <label for="atividades_realizadas1">Atividades Realizadas:</label>
+            <textarea class="form-control atividades-realizadas" id="atividades_realizadas_new1" rows="3" maxlength="1000"
               placeholder="Descreva as atividades realizadas" required></textarea>
-              <small id="charCount" class="form-text text-muted">1000 caracteres</small>
+            <small class="form-text text-muted charCount mb-n4">1000 caracteres restantes</small>
           </div>
         </div>
         <div class="col-md-12">
@@ -346,9 +346,10 @@
         //   return true;
         // }
 
+        // Sua função validarCamposObrigatorios() modificada
         function validarCamposObrigatorios() {
           let form = document.getElementById('myForm');
-          let inputs = form.querySelectorAll('input[required]'); // Seleciona todos os campos obrigatórios
+          let inputs = form.querySelectorAll('input[required], textarea[required]'); // Seleciona todos os campos obrigatórios, incluindo textareas
           let isValid = true;
 
           inputs.forEach(input => {
@@ -359,10 +360,15 @@
               } else {
                 input.classList.remove('is-invalid'); // Remove classe de inválido se o email for válido
               }
+            } else if (input.value.trim() === '') { // Verifica se o campo está vazio
+              isValid = false;
+              input.classList.add('is-invalid'); // Adiciona classe de inválido se o campo estiver vazio
+            } else {
+              input.classList.remove('is-invalid'); // Remove classe de inválido se o campo estiver preenchido
             }
           });
 
-          if (form.checkValidity() === false && !isValid) { // Verifica se há campos inválidos
+          if (form.checkValidity() === false || !isValid) { // Verifica se há campos inválidos ou vazios
             event.preventDefault();
             event.stopPropagation();
             form.classList.add('was-validated');
@@ -403,7 +409,7 @@
 
 
           //Formacao Academica
-          for (var i = 1; i < 3; i++) {
+          for (var i = 1; i < 10; i++) {
             var elemento = document.getElementById("curso" + i);
             if (elemento) {
               dadosFormulario["curso" + i] = elemento.value;
@@ -421,7 +427,7 @@
           }
 
           //TODO: TRAJETORIA PROFISSIONAL
-          for (var i = 1; i < 3; i++) {
+          for (var i = 1; i < 10; i++) {
             var elemento = document.getElementById("nome_empresa" + i);
             if (elemento) {
               dadosFormulario["nome_empresa" + i] = elemento.value;
@@ -442,14 +448,14 @@
               dadosFormulario["data_saida" + i] = elemento.value;
             }
 
-            var elemento = document.getElementById("atividades_realizadas_new1" + i);
+            var elemento = document.getElementById("atividades_realizadas" + i);
             if (elemento) {
-              dadosFormulario["atividades_realizadas_new1" + i] = elemento.value;
+              dadosFormulario["atividades_realizadas" + i] = elemento.value;
             }
           }
 
           //TODO: Cursos Livres
-          for (var i = 1; i < 3; i++) {
+          for (var i = 1; i < 10; i++) {
             var elemento = document.getElementById("curso_realizado" + i);
             if (elemento) {
               dadosFormulario["curso_realizado" + i] = elemento.value;
@@ -467,7 +473,7 @@
           }
 
           //TODO: Idioma
-          for (var i = 1; i < 3; i++) {
+          for (var i = 1; i < 10; i++) {
             var elemento = document.getElementById("idioma" + i);
             if (elemento) {
               dadosFormulario["idioma" + i] = elemento.value;
@@ -511,13 +517,13 @@
               .then(data => {
                 // Tratar a resposta da API, se necessário
                 console.log('Dados enviados com sucesso:', data);
-                // Redireciona para a URL especificada após o sucesso
-                window.location.href = "https://triadecarreira.com.br/obrigado/";
+                // Aqui você pode fazer algo após o envio bem-sucedido, como exibir uma mensagem de sucesso ou redirecionar o usuário para outra página
               })
               .catch(error => {
                 console.error('Erro:', error);
-                // Exibir um alerta de erro na tela
-                alert('Ocorreu um erro ao enviar os dados. Por favor, tente novamente.');
+                // Aqui você pode lidar com o erro, como exibir uma mensagem de erro para o usuário
+              }).finally(() => {
+                window.location.href = "https://triadecarreira.com.br/obrigado/";
               });
           }
 
@@ -533,198 +539,252 @@
           $('#data_entrada1').mask('00/00/0000');
           $('#data_curso1').mask('00/00/0000');
 
-          var formacaoCount = 1;
-          $(".btnAdicionarFormacao").click(function () {
-            formacaoCount++;
-            var newRow = '<div class="row formacao-academica">' +
-              '<div class="col-md-3">' +
-              '<div class="form-group">' +
-              '<label for="curso' + formacaoCount + '">Curso:</label>' +
-              '<input type="text" class="form-control" id="curso' + formacaoCount + '" placeholder="Digite o curso">' +
-              '</div>' +
-              '</div>' +
-              '<div class="col-md-3">' +
-              '<div class="form-group">' +
-              '<label for="instituicao' + formacaoCount + '">Instituição:</label>' +
-              '<input type="text" class="form-control" id="instituicao' + formacaoCount + '" placeholder="Digite a instituição">' +
-              '</div>' +
-              '</div>' +
-              '<div class="col-md-3">' +
-              '<div class="form-group">' +
-              '<label for="data' + formacaoCount + '">Data:</label>' +
-              '<input type="text" class="form-control" id="data' + formacaoCount + '" placeholder="Digite a data">' +
-              '</div>' +
-              '</div>' +
-              '<div class="col-md-3">' +
-              '<div class="form-group">' +
-              '<label for="adicionar">&nbsp;</label>' +
-              '<button type="button" class="btn btn-danger btn-block btnRemoverFormacao">Remover</button>' +
-              '</div>' +
-              '</div>' +
-              '</div>';
-            $(".formacao-academica:last").after(newRow);
-            // Aplicar a máscara de data no novo campo de data
-            $('#data' + formacaoCount).mask('00/00/0000');
+          //FUNÇÕES BOTÃO DE ADICIONAR FORMAÇÕES ACADEMICAS
+
+          $(document).ready(function () {
+            // Contador para o número de formações acadêmicas adicionadas
+            var formacaoCount = 1;
+
+            // Evento de clique para adicionar formação acadêmica
+            $(".btnAdicionarFormacao").click(function () {
+              // Verificar se o número atual de formações acadêmicas é menor que 3
+              if (formacaoCount < 3) {
+                formacaoCount++;
+                var newRow = '<div class="row formacao-academica">' +
+                  '<div class="col-md-3">' +
+                  '<div class="form-group">' +
+                  '<label for="curso' + formacaoCount + '">Curso:</label>' +
+                  '<input type="text" class="form-control" id="curso' + formacaoCount + '" placeholder="Digite o curso">' +
+                  '</div>' +
+                  '</div>' +
+                  '<div class="col-md-3">' +
+                  '<div class="form-group">' +
+                  '<label for="instituicao' + formacaoCount + '">Instituição:</label>' +
+                  '<input type="text" class="form-control" id="instituicao' + formacaoCount + '" placeholder="Digite a instituição">' +
+                  '</div>' +
+                  '</div>' +
+                  '<div class="col-md-3">' +
+                  '<div class="form-group">' +
+                  '<label for="data' + formacaoCount + '">Data:</label>' +
+                  '<input type="text" class="form-control" id="data' + formacaoCount + '" placeholder="Digite a data">' +
+                  '</div>' +
+                  '</div>' +
+                  '<div class="col-md-3">' +
+                  '<div class="form-group">' +
+                  '<label for="adicionar">&nbsp;</label>' +
+                  '<button type="button" class="btn btn-danger btn-block btnRemoverFormacao">Remover</button>' +
+                  '</div>' +
+                  '</div>' +
+                  '</div>';
+                $(".formacao-academica:last").after(newRow);
+
+                // Aplicar a máscara de data no novo campo de data
+                $('#data' + formacaoCount).mask('00/00/0000');
+              } else {
+                // Se já foram adicionadas 3 formações acadêmicas, exibe uma mensagem
+                alert("Você já adicionou o número máximo de formações acadêmicas permitidas.");
+              }
+            });
+
+            // Evento de clique para remover formação acadêmica
+            $(".container").on('click', '.btnRemoverFormacao', function () {
+              $(this).closest('.formacao-academica').remove();
+              formacaoCount--; // Decrementar o contador quando uma formação acadêmica é removida
+            });
           });
 
+          //////////////////////////////////////////////////////////////////////////////////
+          //FUNCIONALIDADES BOTÃO TRAJETÓRIA PROFISSIONAL
           // Remover campos de formação acadêmica
           $(".container").on('click', '.btnRemoverFormacao', function () {
             $(this).closest('.formacao-academica').remove();
           });
+
+          // Inicializar o contador de caracteres nos textareas existentes
+          $('.atividades-realizadas').on('input', function () {
+            var maxLength = $(this).attr('maxlength');
+            var length = $(this).val().length;
+            $(this).siblings('.charCount').text((maxLength - length) + ' caracteres restantes');
+          });
+
           //FUNCIONALIDADES BOTÃO TRAJETÓRIA PROFISSIONAL
-          var trajetoriaCount = 1;
-          $(".btnAdicionarTrajetoria").click(function () { // Corrigido o seletor
-            trajetoriaCount++;
-            var newRow = '<div class="trajetoria-profissional">' +
-              '<div class="row">' +
-              '<div class="col-md-3">' +
-              '<div class="form-group">' +
-              '<label for="nome_empresa' + trajetoriaCount + '">Nome da Empresa:</label>' +
-              '<input type="text" class="form-control" id="nome_empresa' + trajetoriaCount + '" placeholder="Digite o nome da empresa" required>' +
-              '</div>' +
-              '</div>' +
-              '<div class="col-md-3">' +
-              '<div class="form-group">' +
-              '<label for="cargo' + trajetoriaCount + '">Cargo:</label>' +
-              '<input type="text" class="form-control" id="cargo' + trajetoriaCount + '" placeholder="Digite o cargo" required>' +
-              '</div>' +
-              '</div>' +
-              '<div class="col-md-3">' +
-              '<div class="form-group">' +
-              '<label for="data_entrada' + trajetoriaCount + '">Data de Entrada:</label>' +
-              '<input type="text" class="form-control" id="data_entrada' + trajetoriaCount + '" placeholder="Digite a data de entrada" required>' +
-              '</div>' +
-              '</div>' +
-              '<div class="col-md-3">' +
-              '<div class="form-group">' +
-              '<label for="data_saida' + trajetoriaCount + '">Data de Saída:</label>' +
-              '<input type="text" class="form-control" id="data_saida' + trajetoriaCount + '" placeholder="Digite a data de saída">' +
-              '</div>' +
-              '</div>' +
-              '</div>' +
-              '<div class="row">' +
-              '<div class="col-md-12">' +
-              '<div class="form-group">' +
-              '<label for="atividades_realizadas' + trajetoriaCount + '">Atividades Realizadas:</label>' +
-              '<textarea class="form-control" id="atividades_realizadas_new' + trajetoriaCount + '" rows="3" maxlength="1000"' +
-              'placeholder="Descreva as atividades realizadas" required></textarea>' +
-              '<small id="charCount" class="form-text text-muted">1000 caracteres</small>'+
-              '</div>' +
-              '</div>' +
-              '</div>' +
-              '<div class="row">' +
-              '<div class="col-md-12">' +
-              '<div class="form-group">' +
-              '<button type="button" class="btn btn-danger btn-block btnRemoverTrajetoria">Remover Trajetória</button>' +
-              '</div>' +
-              '</div>' +
-              '</div>' +
-              '</div>';
-            $(".trajetoria-profissional:last").after(newRow);
-            // Aplicar a máscara de data no novo campo de data
-            $('#data_entrada' + trajetoriaCount).mask('00/00/0000');
-            $('#data_saida' + trajetoriaCount).mask('00/00/0000');
+          $(document).ready(function () {
+            function updateCharCount() {
+              $('.atividades-realizadas').on('input', function () {
+                var maxLength = $(this).attr('maxlength');
+                var length = $(this).val().length;
+                $(this).siblings('.charCount').text((maxLength - length) + ' caracteres restantes');
+              });
+            }
+
+            // Initialize char count for existing textareas
+            updateCharCount();
+
+            var trajetoriaCount = 1;
+            $(".btnAdicionarTrajetoria").click(function () {
+              if (trajetoriaCount < 3) { // Verificar se o número atual de trajetórias é menor que 3
+                trajetoriaCount++;
+                var newRow = '<div class="trajetoria-profissional">' +
+                  '<div class="row">' +
+                  '<div class="col-md-3">' +
+                  '<div class="form-group">' +
+                  '<label for="nome_empresa' + trajetoriaCount + '">Nome da Empresa:</label>' +
+                  '<input type="text" class="form-control" id="nome_empresa' + trajetoriaCount + '" placeholder="Digite o nome da empresa" required>' +
+                  '</div>' +
+                  '</div>' +
+                  '<div class="col-md-3">' +
+                  '<div class="form-group">' +
+                  '<label for="cargo' + trajetoriaCount + '">Cargo:</label>' +
+                  '<input type="text" class="form-control" id="cargo' + trajetoriaCount + '" placeholder="Digite o cargo" required>' +
+                  '</div>' +
+                  '</div>' +
+                  '<div class="col-md-3">' +
+                  '<div class="form-group">' +
+                  '<label for="data_entrada' + trajetoriaCount + '">Data de Entrada:</label>' +
+                  '<input type="text" class="form-control" id="data_entrada' + trajetoriaCount + '" placeholder="Digite a data de entrada" required>' +
+                  '</div>' +
+                  '</div>' +
+                  '<div class="col-md-3">' +
+                  '<div class="form-group">' +
+                  '<label for="data_saida' + trajetoriaCount + '">Data de Saída:</label>' +
+                  '<input type="text" class="form-control" id="data_saida' + trajetoriaCount + '" placeholder="Digite a data de saída">' +
+                  '</div>' +
+                  '</div>' +
+                  '</div>' +
+                  '<div class="row">' +
+                  '<div class="col-md-12">' +
+                  '<div class="form-group">' +
+                  '<label for="atividades_realizadas' + trajetoriaCount + '">Atividades Realizadas:</label>' +
+                  '<textarea class="form-control atividades-realizadas" id="atividades_realizadas_new' + trajetoriaCount + '" rows="3" maxlength="1000" placeholder="Descreva as atividades realizadas" required></textarea>' +
+                  '<small class="form-text text-muted charCount">1000 caracteres restantes</small>' +
+                  '</div>' +
+                  '</div>' +
+                  '</div>' +
+                  '<div class="row">' +
+                  '<div class="col-md-12">' +
+                  '<div class="form-group">' +
+                  '<button type="button" class="btn btn-danger btn-block btnRemoverTrajetoria">Remover Trajetória</button>' +
+                  '</div>' +
+                  '</div>' +
+                  '</div>' +
+                  '</div>';
+                $(".trajetoria-profissional:last").after(newRow);
+
+                // Aplicar a máscara de data no novo campo de data
+                $('#data_entrada' + trajetoriaCount).mask('00/00/0000');
+                $('#data_saida' + trajetoriaCount).mask('00/00/0000');
+
+                // Adicionar contador de caracteres no novo textarea
+                updateCharCount();
+              } else {
+                // Se já foram adicionadas 3 trajetórias, exiba uma mensagem ou realize outra ação, se necessário
+                alert("Você já adicionou o número máximo de trajetórias permitidas.");
+              }
+            });
+
+            // Remover campo de trajetória profissional ao clicar no botão "Remover Trajetória"
+            $(".container").on('click', '.btnRemoverTrajetoria', function () {
+              $(this).closest('.trajetoria-profissional').remove();
+              trajetoriaCount--; // Reduzir o contador quando uma trajetória é removida
+            });
           });
 
-          // Remover campo de trajetória profissional ao clicar no botão "Remover Trajetória"
-          $(".container").on('click', '.btnRemoverTrajetoria', function () {
-            $(this).closest('.trajetoria-profissional').remove();
 
+          //FECHAMENTO TRAJETORIA PROFISSIONAL
+          /////////////////////////////////////////////////////////////////////////////////////////////////
+          //FUNCIONALIDADES BOTÕES DE ADIÇÃO DE CURSOS
+          $(document).ready(function () {
+            // Contador para o número de cursos adicionados
+            var cursosCount = 1;
 
-          });
-          //FECHAMENTO TRAJETÓRIA PROFISSIONAL
+            // Evento de clique para adicionar curso
+            $(".btnAdicionarCurso").click(function () {
+              // Verificar se o número atual de cursos é menor que 3
+              if (cursosCount < 3) {
+                cursosCount++;
+                var newRow = '<div class="row cursos-livres">' +
+                  '<div class="col-md-3">' +
+                  '<div class="form-group">' +
+                  '<label for="curso_realizado' + cursosCount + '">Curso:</label>' +
+                  '<input type="text" class="form-control" id="curso_realizado' + cursosCount + '" placeholder="Digite o curso">' +
+                  '</div>' +
+                  '</div>' +
+                  '<div class="col-md-3">' +
+                  '<div class="form-group">' +
+                  '<label for="instituicao_curso' + cursosCount + '">Instituição:</label>' +
+                  '<input type="text" class="form-control" id="instituicao_curso' + cursosCount + '" placeholder="Digite a instituição">' +
+                  '</div>' +
+                  '</div>' +
+                  '<div class="col-md-3">' +
+                  '<div class="form-group">' +
+                  '<label for="data_curso' + cursosCount + '">Data:</label>' +
+                  '<input type="text" class="form-control" id="data_curso' + cursosCount + '" placeholder="Digite a data">' +
+                  '</div>' +
+                  '</div>' +
+                  '<div class="col-md-3">' +
+                  '<div class="form-group">' +
+                  '<label for="adicionar_curso">&nbsp;</label>' +
+                  '<button type="button" class="btn btn-danger btn-block btnRemoverCurso">Remover</button>' +
+                  '</div>' +
+                  '</div>' +
+                  '</div>';
+                $(".cursos-livres:last").after(newRow);
 
-          var cursosCount = 1;
-          $(".btnAdicionarCurso").click(function () {
-            cursosCount++; //CURSOS LIVRES
-            var newRow = '<div class="row cursos-livres">' +
-              '<div class="col-md-3">' +
-              '<div class="form-group">' +
-              '<label for="curso_realizado' + cursosCount + '">Curso:</label>' +
-              '<input type="text" class="form-control" id="curso_realizado' + cursosCount + '" placeholder="Digite o curso">' +
-              '</div>' +
-              '</div>' +
-              '<div class="col-md-3">' +
-              '<div class="form-group">' +
-              '<label for="instituicao_curso' + cursosCount + '">Instituição:</label>' +
-              '<input type="text" class="form-control" id="instituicao_curso' + cursosCount + '" placeholder="Digite a instituição">' +
-              '</div>' +
-              '</div>' +
-              '<div class="col-md-3">' +
-              '<div class="form-group">' +
-              '<label for="data_curso' + cursosCount + '">Data:</label>' +
-              '<input type="text" class="form-control" id="data_curso' + cursosCount + '" placeholder="Digite a data">' +
-              '</div>' +
-              '</div>' +
-              '<div class="col-md-3">' +
-              '<div class="form-group">' +
-              '<label for="adicionar_curso">&nbsp;</label>' +
-              '<button type="button" class="btn btn-danger btn-block btnRemoverCurso">Remover</button>' +
-              '</div>' +
-              '</div>' +
-              '</div>';
-            $(".cursos-livres:last").after(newRow);
-            // Aplicar a máscara de data no novo campo de data
-            $('#data_curso' + cursosCount).mask('00/00/0000');
-          });
+                // Aplicar a máscara de data no novo campo de data
+                $('#data_curso' + cursosCount).mask('00/00/0000');
+              } else {
+                // Se já foram adicionados 3 cursos, exibe uma mensagem
+                alert("Você já adicionou o número máximo de cursos permitidos.");
+              }
+            });
 
-          $(".container").on('click', '.btnRemoverCurso', function () {
-            $(this).closest('.cursos-livres').remove();
-          });
-
-          var idiomasCount = 1;
-          $(".btnAdicionarIdioma").click(function () {
-            idiomasCount++; //IDIOMAS
-            var newRow = '<div class="row idiomas">' +
-              '<div class="col-md-9">' +
-              '<div class="form-group">' +
-              '<label for="idioma' + idiomasCount + '">Idioma:</label>' +
-              '<input type="text" class="form-control" id="idioma' + idiomasCount + '" placeholder="Digite o idioma">' +
-              '</div>' +
-              '</div>' +
-              '<div class="col-md-3">' +
-              '<div class="form-group">' +
-              '<label for="adicionar_idioma">&nbsp;</label>' +
-              '<button type="button" class="btn btn-danger btn-block btnRemoverIdioma">Remover</button>' +
-              '</div>' +
-              '</div>' +
-              '</div>';
-            $(".idiomas:last").after(newRow);
+            // Evento de clique para remover curso
+            $(".container").on('click', '.btnRemoverCurso', function () {
+              $(this).closest('.cursos-livres').remove();
+              cursosCount--; // Decrementar o contador quando um curso é removido
+            });
           });
 
-          $(".container").on('click', '.btnRemoverIdioma', function () {
-            $(this).closest('.idiomas').remove();
+          //////////////////////////////////////////////////////////////////////////////////////////
+          //FUNCIONALIDADES BOTÃO IDIOMA
+          $(document).ready(function () {
+            // Contador para o número de idiomas adicionados
+            var idiomasCount = 1;
+
+            // Evento de clique para adicionar idioma
+            $(".btnAdicionarIdioma").click(function () {
+              // Verificar se o número atual de idiomas é menor que 3
+              if (idiomasCount < 3) {
+                idiomasCount++;
+                var newRow = '<div class="row idiomas">' +
+                  '<div class="col-md-9">' +
+                  '<div class="form-group">' +
+                  '<label for="idioma' + idiomasCount + '">Idioma:</label>' +
+                  '<input type="text" class="form-control" id="idioma' + idiomasCount + '" placeholder="Digite o idioma">' +
+                  '</div>' +
+                  '</div>' +
+                  '<div class="col-md-3">' +
+                  '<div class="form-group">' +
+                  '<label for="adicionar_idioma">&nbsp;</label>' +
+                  '<button type="button" class="btn btn-danger btn-block btnRemoverIdioma">Remover</button>' +
+                  '</div>' +
+
+                  '</div>';
+                $(".idiomas:last").after(newRow);
+              } else {
+                // Se já foram adicionados 3 idiomas, exibe uma mensagem
+                alert("Você já adicionou o número máximo de idiomas permitidos.");
+              }
+            });
+
+            // Evento de clique para remover idioma
+            $(".container").on('click', '.btnRemoverIdioma', function () {
+              $(this).closest('.idiomas').remove();
+              idiomasCount--; // Decrementar o contador quando um idioma é removido
+            });
           });
         });
 
-      </script>
-
-      <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-          const maxLength = 1000;
-          const atividadesRealizadas = document.getElementById('atividades_realizadas_new1');
-          const charCount = document.getElementById('charCount');
-      
-          atividadesRealizadas.addEventListener('input', () => {
-            const length = atividadesRealizadas.value.length;
-            const remaining = maxLength - length;
-      
-            // Formatação do contador
-            let formattedRemaining;
-            if (remaining >= 100) {
-              formattedRemaining = remaining.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); // Adiciona vírgulas a cada 3 dígitos
-            } else {
-              formattedRemaining = remaining;
-            }
-      
-            charCount.textContent = `${formattedRemaining} caracteres restantes`;
-      
-            // Prevenção de caracteres excedentes
-            if (length > maxLength) {
-              atividadesRealizadas.value = atividadesRealizadas.value.substring(0, maxLength);
-            }
-          });
-        });
       </script>
 </body>
 
