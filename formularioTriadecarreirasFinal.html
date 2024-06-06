@@ -21,7 +21,7 @@
         <div class="col-md-3">
           <div class="form-floating">
             <label for="nome">Nome Completo: *</label>
-            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo" required>
+            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo" maxlength="100" required>
             <div class="invalid-feedback">
               <!--Por favor, insira um nome válido.-->
             </div>
@@ -30,8 +30,7 @@
         <div class="col-md-3">
           <div class="form-floating">
             <label for="celular">Celular/WhatsApp:*</label>
-            <input type="tel" class="form-control" id="celular" placeholder="Digite seu celular (XX)XXXXX-XXXX"
-              required>
+            <input type="tel" class="form-control" id="celular" placeholder="Digite seu celular (XX)XXXXX-XXXX" maxlength="100" required>
             <div class="invalid-feedback">
               <!--Por favor, insira um número de celular válido.-->
             </div>
@@ -40,7 +39,7 @@
         <div class="col-md-3">
           <div class="form-floating">
             <label for="email">Email: *</label>
-            <input type="email" class="form-control" id="email" placeholder="Digite seu email" required>
+            <input type="email" class="form-control" id="email" placeholder="Digite seu email" maxlength="150" required>
             <div class="invalid-feedback">
               <!--Por favor, insira um email válido.-->
             </div>
@@ -62,13 +61,13 @@
         <div class="col-md-3">
           <div class="form-group">
             <label for="bairro">Bairro:</label>
-            <input type="text" class="form-control" id="bairro" placeholder="Digite seu bairro" required>
+            <input type="text" class="form-control" id="bairro" placeholder="Digite seu bairro" maxlength="100" required>
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-group">
             <label for="cidade">Cidade:</label>
-            <input type="text" class="form-control" id="cidade" placeholder="Digite sua cidade" required>
+            <input type="text" class="form-control" id="cidade" placeholder="Digite sua cidade" maxlength="100" required>
           </div>
         </div>
         <div class="col-md-3">
@@ -110,7 +109,7 @@
         <div class="col-md-3">
           <div class="form-group">
             <label for="linkedin1">LinkedIn:</label>
-            <input type="text" class="form-control" id="linkedin1" placeholder="Copiar URL de sua página">
+            <input type="text" class="form-control" id="linkedin1" placeholder="Copiar URL de sua página" maxlength="100">
             <p class="text-muted">Caso não possua uma conta será necessário criá-la. </p>
           </div>
         </div>
@@ -127,13 +126,13 @@
         <div class="col-md-3">
           <div class="form-group">
             <label for="curso1">Curso:</label>
-            <input type="text" class="form-control" id="curso1" placeholder="Digite o curso" required>
+            <input type="text" class="form-control" id="curso1" placeholder="Digite o curso" maxlength="100" required>
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-group">
             <label for="instituicao1">Instituição:</label>
-            <input type="text" class="form-control" id="instituicao1" placeholder="Digite a instituição" required>
+            <input type="text" class="form-control" id="instituicao1" placeholder="Digite a instituição" maxlength="100" required>
           </div>
         </div>
         <div class="col-md-3">
@@ -162,7 +161,7 @@
           <div class="form-group">
             <label for="titulo_sistemas">Título:</label>
             <input type="text" class="form-control" id="titulo_sistemas" placeholder="OFFICE, EXCEL, JAVA, SAP"
-              required>
+            maxlength="100"  required>
           </div>
         </div>
       </div>
@@ -179,7 +178,7 @@
           <div class="form-group">
             <label for="conhecimentos">Conhecimento e Habilidades:</label>
             <input type="text" class="form-control" id="conhecimentos"
-              placeholder="Ex.: Análise de Sistemas, Administração de Banco de Dados, Gestão de Equipes" required>
+              placeholder="Ex.: Análise de Sistemas, Administração de Banco de Dados, Gestão de Equipes" maxlength="150" required>
           </div>
         </div>
       </div>
@@ -195,7 +194,7 @@
           <div class="form-group">
             <label for="cargos_interesse">Cargos de Interesse/Objetivo:</label>
             <input type="text" class="form-control" id="cargos_interesse"
-              placeholder="Digite os cargos de interesse ou objetivo" required>
+              placeholder="Digite os cargos de interesse ou objetivo" maxlength="100" required>
           </div>
         </div>
       </div>
@@ -212,19 +211,19 @@
         <div class="col-md-3">
           <div class="form-group">
             <label for="nome_empresa1">Nome da Empresa:</label>
-            <input type="text" class="form-control" id="nome_empresa1" placeholder="Digite o nome da empresa" required>
+            <input type="text" class="form-control" id="nome_empresa1" placeholder="Digite o nome da empresa" maxlength="100" required>
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-group">
             <label for="cargo1">Cargo:</label>
-            <input type="text" class="form-control" id="cargo1" placeholder="Digite o cargo" required>
+            <input type="text" class="form-control" id="cargo1" placeholder="Digite o cargo" maxlength="100"  required>
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-group">
             <label for="data_entrada1">Data de Entrada:</label>
-            <input type="text" class="form-control" id="data_entrada1" placeholder="Digite a data de entrada" required>
+            <input type="text" class="form-control" id="data_entrada1" placeholder="Digite a data de entrada"  required>
           </div>
         </div>
         <div class="col-md-3">
@@ -261,14 +260,14 @@
         <div class="col-md-3">
           <div class="form-group">
             <label for="curso_realizado">Curso:</label>
-            <input type="text" class="form-control" id="curso_realizado1"
+            <input type="text" class="form-control" id="curso_realizado1" maxlength="100"
               placeholder="Ex: Excel, informática, Nr’s, Treinamento, Capacitação">
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-group">
             <label for="instituicao_curso">Instituição:</label>
-            <input type="text" class="form-control" id="instituicao_curso1" placeholder="Digite a instituição">
+            <input type="text" class="form-control" id="instituicao_curso1" placeholder="Digite a instituição" maxlength="100">
           </div>
         </div>
         <div class="col-md-3">
@@ -296,7 +295,7 @@
           <div class="form-group">
             <label for="idioma">Idioma:</label>
             <input type="text" class="form-control" id="idioma1" placeholder="Nível (básico, intermediário, avançado)"
-              required>
+            maxlength="100"  required>
           </div>
         </div>
         <div class="col-md-3">
@@ -448,9 +447,9 @@
               dadosFormulario["data_saida" + i] = elemento.value;
             }
 
-            var elemento = document.getElementById("atividades_realizadas" + i);
+            var elemento = document.getElementById("atividades_realizadas_new" + i);
             if (elemento) {
-              dadosFormulario["atividades_realizadas" + i] = elemento.value;
+              dadosFormulario["atividades_realizadas_new" + i] = elemento.value;
             }
           }
 
@@ -629,13 +628,13 @@
                   '<div class="col-md-3">' +
                   '<div class="form-group">' +
                   '<label for="nome_empresa' + trajetoriaCount + '">Nome da Empresa:</label>' +
-                  '<input type="text" class="form-control" id="nome_empresa' + trajetoriaCount + '" placeholder="Digite o nome da empresa" required>' +
+                  '<input type="text" class="form-control" id="nome_empresa' + trajetoriaCount + '" placeholder="Digite o nome da empresa" maxlength="100" required>' +
                   '</div>' +
                   '</div>' +
                   '<div class="col-md-3">' +
                   '<div class="form-group">' +
                   '<label for="cargo' + trajetoriaCount + '">Cargo:</label>' +
-                  '<input type="text" class="form-control" id="cargo' + trajetoriaCount + '" placeholder="Digite o cargo" required>' +
+                  '<input type="text" class="form-control" id="cargo' + trajetoriaCount + '" placeholder="Digite o cargo" maxlength="100" required>' +
                   '</div>' +
                   '</div>' +
                   '<div class="col-md-3">' +
@@ -706,13 +705,13 @@
                   '<div class="col-md-3">' +
                   '<div class="form-group">' +
                   '<label for="curso_realizado' + cursosCount + '">Curso:</label>' +
-                  '<input type="text" class="form-control" id="curso_realizado' + cursosCount + '" placeholder="Digite o curso">' +
+                  '<input type="text" class="form-control" id="curso_realizado' + cursosCount + '" placeholder="Digite o curso" maxlength="100">' +
                   '</div>' +
                   '</div>' +
                   '<div class="col-md-3">' +
                   '<div class="form-group">' +
                   '<label for="instituicao_curso' + cursosCount + '">Instituição:</label>' +
-                  '<input type="text" class="form-control" id="instituicao_curso' + cursosCount + '" placeholder="Digite a instituição">' +
+                  '<input type="text" class="form-control" id="instituicao_curso' + cursosCount + '" placeholder="Digite a instituição" maxlength="100">' +
                   '</div>' +
                   '</div>' +
                   '<div class="col-md-3">' +
@@ -760,7 +759,7 @@
                   '<div class="col-md-9">' +
                   '<div class="form-group">' +
                   '<label for="idioma' + idiomasCount + '">Idioma:</label>' +
-                  '<input type="text" class="form-control" id="idioma' + idiomasCount + '" placeholder="Digite o idioma">' +
+                  '<input type="text" class="form-control" id="idioma' + idiomasCount + '" placeholder="Digite o idioma" maxlength="100">' +
                   '</div>' +
                   '</div>' +
                   '<div class="col-md-3">' +
